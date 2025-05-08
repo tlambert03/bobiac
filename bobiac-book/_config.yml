@@ -1,0 +1,35 @@
+# Book settings
+# Learn more at https://jupyterbook.org/customize/config.html
+
+title: BoBiAC Book
+author: IAC@HMS
+logo: _static/logo/bobiac_logos_svgexport-03.svg
+
+exclude_patterns: [_build, .DS_Store, "**.ipynb_checkpoints", README.md]
+
+# See https://jupyterbook.org/content/execute.html
+execute:
+  execute_notebooks: cache
+
+# Define the name of the latex output file for PDF builds
+latex:
+  latex_documents:
+    targetname: book.tex
+
+# Information about where the book exists on the web
+repository:
+  url: https://github.com/HMS-IAC/bobiac/  # Online location of your book
+  branch: main  # Which branch of the repository should be used when creating links (optional)
+
+# Add GitHub buttons to your book
+# See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
+html:
+  use_repository_button: true
+  extra_footer: |
+      <p>
+      All content is licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC-BY 4.0</a>, except where noted otherwise.
+      </p>
+  extra_js:
+    - _static/js/custom_javascript.js
+  # extra_css:
+    # - _static/custom.css
