@@ -11,7 +11,7 @@ exclude_patterns: [_build, .DS_Store, "**.ipynb_checkpoints", README.md]
 
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: cache
+  execute_notebooks: cache # "off", "force", "cache", "auto"
 
 # Define the name of the latex output file for PDF builds
 latex:
@@ -41,3 +41,5 @@ html:
   #   - styles/custom.css
   # extra_javascript:
   #   - scripts/custom.js
+  extra_css:
+    - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css

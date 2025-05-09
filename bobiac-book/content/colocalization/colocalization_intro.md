@@ -1,1 +1,1 @@
-# Colocalization
+# <i class="fa-solid fa-location-crosshairs"></i> Colocalization

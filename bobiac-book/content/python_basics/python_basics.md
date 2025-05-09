@@ -1,1 +1,1 @@
-# The Python Basics
+# <i class="fab fa-python"></i> The Python Basics

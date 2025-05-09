@@ -1,1 +1,1 @@
-# Figure Creation
+# <i class="fa-solid fa-images"></i> Figure Creation
