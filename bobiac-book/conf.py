@@ -28,13 +28,10 @@ html_theme = "sphinx_book_theme"
 
 html_theme_options = {
     "search_bar_text": "Search this book...",
+    "use_download_button": False,
     "launch_buttons": {
         "notebook_interface": "classic",
-        "binderhub_url": "",
-        "jupyterhub_url": "",
         "thebe": False,
-        "colab_url": "",
-        "deepnote_url": "",
     },
     "repository_url": "https://github.com/HMS-IAC/bobiac/",
     "repository_branch": "main",
