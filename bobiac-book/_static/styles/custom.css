@@ -1,9 +1,5 @@
 .landing-logo {
-    width: 50%;
-    /* margin: 0 auto; Center the image horizontally */
-}
-
-.home-icon {
-    width: 50px;
-    /* vertical-align: middle; */
+    width: 80%;
+    display: flex;
+    /* margin: 0 auto; */
 }
