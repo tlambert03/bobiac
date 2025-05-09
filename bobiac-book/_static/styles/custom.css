@@ -1,0 +1,10 @@
+@media print {
+    p {
+        text-align: justify;
+    }
+}
+
+.landing-logo {
+    width: 50%;
+    /* margin: 0 auto; Center the image horizontally */
+}

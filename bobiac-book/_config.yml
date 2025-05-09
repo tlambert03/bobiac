@@ -1,8 +1,10 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
+
 title: BoBiAC Book
-author: IAC@HMS
+author: Image Analysis Collaboratory @ Harvard Medical School
+copyright: "2025"
 logo: _static/logo/bobiac_logos_svgexport-03.svg
 
 exclude_patterns: [_build, .DS_Store, "**.ipynb_checkpoints", README.md]
@@ -23,13 +25,19 @@ repository:
 
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
+# NOTE: Jupyter Book assumes everything under _static/ is the root for custom assets.
 html:
   use_repository_button: true
   extra_footer: |
       <p>
       All content is licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC-BY 4.0</a>, except where noted otherwise.
       </p>
-  extra_js:
-    - _static/js/custom_javascript.js
+
+  # NOTE: When running `jupyter-book build`, a `_static/` folder is generated that includes `styles` and `scripts` directories automatically.
+  # Since we are placing our custom CSS and JS in folders named `styles/` and `scripts/`, Jupyter Book will automatically include them.
+  # Therefore, it is not necessary to manually specify `extra_css` or `extra_javascript` in the config.
+  # Example (not needed):
   # extra_css:
-    # - _static/custom.css
+  #   - styles/custom.css
+  # extra_javascript:
+  #   - scripts/custom.js

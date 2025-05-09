@@ -1,1 +1,1 @@
-# Introduction to Machine Learning
+# Machine Learning for Image Segmentation

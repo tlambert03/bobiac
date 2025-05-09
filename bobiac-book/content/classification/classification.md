@@ -1,1 +1,1 @@
-# Introduction to Object Classification
+# Object Classification

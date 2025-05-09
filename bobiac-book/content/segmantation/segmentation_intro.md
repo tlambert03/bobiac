@@ -1,4 +1,4 @@
-# Introduction to Semantic & Instance Segmentation
+# Semantic & Instance Segmentation
 
 What is it? What is the difference between semantic and instance segmentation? ...
 

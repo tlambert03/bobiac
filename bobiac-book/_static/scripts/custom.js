@@ -1,10 +1,10 @@
 // Force all external links to open in a new tab
 document.addEventListener("DOMContentLoaded", function () {
+    console.log("DOM fully loaded and parsed");
     document.querySelectorAll('a[href^="http"]').forEach(link => {
-        if (!link.href.includes(window.location.hostname)) {
-            link.setAttribute('target', '_blank');
-            link.setAttribute('rel', 'noopener noreferrer');
-        }
+        console.log("Modifying link:", link.href);
+        link.setAttribute('target', '_blank');
+        link.setAttribute('rel', 'noopener noreferrer');
     });
 });
 

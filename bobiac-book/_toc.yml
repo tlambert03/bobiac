@@ -2,7 +2,8 @@ format: jb-book
 root: landing-page.md
 
 parts:
-- caption: COURSE MATERIAL
+# COURSE MATERIAL
+- caption: Course Material
   chapters:
   - file: content/intro/bioimage_analysis_intro.md
   - file: content/intro/fluorescence_microscopy_intro.md
@@ -42,15 +43,32 @@ parts:
 
   - file: content/measurement_and_quantification/measurement_and_quantification_intro.md
 
+  - file: content/colocalization/colocalization_intro.md
+    sections:
+      - file: content/colocalization/object_based_colocalization.md
+      - file: content/colocalization/pixel_intensity_based_colocalization.md
+
   - file: content/figure_creation/figure_creation_intro.md
+    sections:
+      - file: content/figure_creation/figure_creation_with_python.md
+
+  - file: content/reproducibility_and_image_ethics/reproducibility_and_image_ethics.md
 
 
-- caption: DATA
+# STUDENT WORKING GROUPS
+- caption: Student Working Groups
+  chapters:
+  - file: student_group_work/student_group_work.md
+
+
+# COURSE DATA
+- caption: Data
   chapters:
   - file: data/course_data.md
 
 
-- caption: LINKS
+# LINKS/EXTRA
+- caption: Links
   chapters:
   - url: https://iac.hms.harvard.edu/bobiac/2025
     title: BoBiAC

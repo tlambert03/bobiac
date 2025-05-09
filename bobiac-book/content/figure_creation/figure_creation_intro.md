@@ -1,1 +1,1 @@
-# How to Create Figures in Python
+# Figure Creation
