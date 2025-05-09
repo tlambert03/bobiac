@@ -1,5 +1,22 @@
+/* Shared styling for all logos */
 .landing-logo {
     width: 80%;
-    display: flex;
+    background: transparent !important;
     /* margin: 0 auto; */
+}
+
+/* Hide both by default */
+.logo-light,
+.logo-dark {
+    display: none;
+}
+
+/* Show light logo in light theme */
+html[data-theme="light"] .logo-light {
+    display: flex;
+}
+
+/* Show dark logo in dark theme */
+html[data-theme="dark"] .logo-dark {
+    display: flex;
 }

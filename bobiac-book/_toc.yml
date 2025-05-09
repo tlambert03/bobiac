@@ -14,6 +14,8 @@ parts:
       - file: content/getting_started_with_python/file2.md
 
   - file: content/python_basics/python_basics.md
+    sections:
+      - file: content/python_basics/python_basics_nb
 
   - file: content/digital_images_intro/digital_images_intro.md
     sections:
