@@ -23,6 +23,7 @@ html_css_files = ["styles/custom.css"]
 html_js_files = ["scripts/custom.js"]
 
 html_static_path = ["_static"]
+html_js_files = ['scripts/custom.js']
 
 html_theme = "sphinx_book_theme"
 
@@ -41,7 +42,7 @@ html_theme_options = {
     "use_edit_page_button": False,
     "use_issues_button": False,
     "logo": {
-        "text": "BoBiAC Book",
+        # "text": "BoBiAC Book",
         "image_light": "_static/logo/bobiac_logos_svgexport-03.svg",
         "image_dark": "_static/logo/bobiac_logos_svgexport-04.svg",
    }
@@ -62,8 +63,6 @@ myst_enable_extensions = [
 myst_url_schemes = ["mailto", "http", "https"]
 
 nb_execution_allow_errors = False
-nb_execution_cache_path = ""
-nb_execution_excludepatterns = []
 nb_execution_in_temp = False
 nb_execution_mode = "force"
 nb_execution_timeout = 30
@@ -79,6 +78,4 @@ use_jupyterbook_latex = True
 
 use_multitoc_numbering = True
 
-exclude_patterns = [
-    ".DS_Store"
-]
+exclude_patterns = [".DS_Store"]
