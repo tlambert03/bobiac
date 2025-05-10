@@ -3,33 +3,25 @@ import sys
 from pathlib import Path
 
 def update_notebook(input_path: str | Path, output_path: str | Path) -> None:
-    """
-    Cleans a Jupyter notebook by removing cells based on specific rules.
-    - Cells tagged with "delete" are removed.
-    - Cells tagged with "show" and "remove-cell" have the "remove-cell" tag removed.
-    """
-
     nb = nbformat.read(input_path, as_version=4)
     cleaned_cells = []
 
     for cell in nb.cells:
         tags = cell.get("metadata", {}).get("tags", [])
 
-        # delete cell if it the word "remove-..." is in the tags
-        if "remove-input" in tags or "remove-output" in tags or "remove-cell" in tags:
+        # Remove entire cell if it contains certain tags
+        if any(tag in tags for tag in ["remove-input", "remove-output", "remove-cell"]):
             continue
 
-        # Remove download link cell (exact match or containing anchor class)
-        if (
-            cell.cell_type == "markdown"
-            and "download-ipynb-button" in cell.get("source", "")
-        ):
-            continue
-
-        # if the tag has "skip-execution" in it, remove the tag
+        # Remove 'skip-execution' tag if present
         if "skip-execution" in tags:
             tags.remove("skip-execution")
             cell["metadata"]["tags"] = tags
+
+        # Keep only the first line of markdown cells (the title) and remove the rest
+        if cell.cell_type == "markdown":
+            lines = cell.source.splitlines()
+            cell.source = lines[0] if lines else ""
 
         cleaned_cells.append(cell)
 
