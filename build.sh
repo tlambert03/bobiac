@@ -1,4 +1,12 @@
-#!/bin/bash
+# Check if OpenGL is available
+echo "🔍 Verifying OpenGL setup..."
+if ! glxinfo | grep -q "OpenGL version"; then
+  echo "❌ OpenGL is not available! Exiting build."
+  exit 1
+else
+  glxinfo | grep "OpenGL version"
+  echo "✅ OpenGL is available."
+fi
 
 # Build the book
 echo "🔧 Building Jupyter Book with Sphinx..."
