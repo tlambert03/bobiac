@@ -24,7 +24,7 @@ jobs:
       - name: Set up OpenGL and virtual display
         run: |
           sudo apt-get update
-          sudo apt-get install -y xvfb libgl1-mesa-glx libglu1-mesa mesa-utils
+          sudo apt-get install -y xvfb libgl1-mesa-dri libglx-mesa0 libglu1-mesa mesa-utils
           Xvfb :99 -screen 0 1920x1080x24 &
           echo "DISPLAY=:99" >> $GITHUB_ENV
 
