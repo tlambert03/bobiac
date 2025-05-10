@@ -1,0 +1,4 @@
+jupyter-book
+ndv[jupyter,vispy]
+tifffile
+scikit-image
