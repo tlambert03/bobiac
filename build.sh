@@ -42,7 +42,7 @@ echo "📁 Preparing static notebook downloads..."
 mkdir -p _static/notebooks/
 
 # Process and copy executed notebooks
-for notebook in $(find _build/jupyter_execute -name "*.ipynb"); do
+for notebook in $(find c -name "*.ipynb"); do
   rel_path="${notebook#_build/jupyter_execute/}"
   out_path="_static/notebooks/$rel_path"
   out_dir=$(dirname "$out_path")
