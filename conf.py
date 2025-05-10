@@ -78,4 +78,4 @@ use_jupyterbook_latex = True
 
 use_multitoc_numbering = True
 
-exclude_patterns = [".DS_Store"]
+exclude_patterns = [".DS_Store", ".venv", "_internal"]

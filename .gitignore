@@ -2,4 +2,4 @@
 .DS_Store
 
 # prevent from adding the _buid directory
-_build  
+_build
