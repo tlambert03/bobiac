@@ -2,7 +2,7 @@
 
 # Build the book
 echo "🔧 Building Jupyter Book with Sphinx..."
-python3 -m sphinx -a . -b html _build/html
+DISPLAY=${DISPLAY:-:99} python3 -m sphinx -a . -b html _build/html
 echo "📘 Book built successfully at _build/html/"
 
 # Prepare built notebook downloads in _build/html/notebooks/
