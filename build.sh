@@ -10,6 +10,8 @@ fi
 
 # Build the book
 echo "🔧 Building Jupyter Book with Sphinx..."
+# DISPLAY is set in github workflows in deploy-book.yml. This is needed
+# to visualize glfw, vispy, or napari-based notebooks without errors.
 DISPLAY=${DISPLAY:-:99} python3 -m sphinx -a . -b html _build/html
 echo "📘 Book built successfully at _build/html/"
 

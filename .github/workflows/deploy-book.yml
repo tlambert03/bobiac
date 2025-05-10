@@ -20,7 +20,8 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
 
-      # Install OpenGL + virtual display support
+      # Install OpenGL + virtual display support. This is needed to visualize
+      # glfw, vispy, or napari-based notebooks without errors.
       - name: Set up OpenGL and virtual display
         run: |
           sudo apt-get update
