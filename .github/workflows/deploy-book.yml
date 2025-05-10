@@ -43,7 +43,7 @@ jobs:
       - name: Build the book
         run: |
           chmod +x ./build.sh
-          ./build_book.sh
+          ./build.sh
           touch ./_build/.nojekyll
 
       # Deploy the book
