@@ -9,12 +9,23 @@
 
 ## Welcome to the BoBiAC Book
 
-## The Jupyter Notebooks
+...
 
-The `Jupyter Notebooks` within this book are available to download. Each of them has a `Download this notebook` at the top of the page.
+### Lecture Slides
 
+All the `Lecture Slides` are available to download as `pdf`. Each of them has a `Download this Slides` button at the top of the page.
+
+### Jupyter Notebooks
+
+The `Jupyter Notebooks` within this book are available to download. Each of them has a `Download this Notebook` button at the top of the page.
 
 All the Notebooks are designed to be used with [uv](https://docs.astral.sh/uv/getting-started/installation/) and [juv](https://github.com/manzt/juv) to avoid the need to deal with Python environments. Detailed instruction can be found in the [Getting Started with Python](./content/getting_started_with_python/getting_started_with_python.md) section of this book.
+
+### Course Datasets
+
+The datasets used in this book are available to download from the [Course Data](./data/course_data.md) section of this book.
+
+### Table of Contents
 
 ```{tableofcontents}
 ```
