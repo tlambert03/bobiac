@@ -45,7 +45,7 @@ html[data-theme="dark"] .logo-dark {
 /* Custom download button styling */
 .custom-button {
   padding: 0.1em 0.2em;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
   border-radius: 6px;
   text-decoration: none;
   display: inline-block;
@@ -74,5 +74,5 @@ html[data-theme="dark"] .logo-dark {
   border: 2px solid var(--bobiac-green);
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin: 1em 0;
+  margin-bottom: 0.5em;
 }
