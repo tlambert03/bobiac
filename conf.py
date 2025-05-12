@@ -32,7 +32,8 @@ html_theme_options = {
     "use_download_button": False,
     "launch_buttons": {
         "notebook_interface": "classic",
-        "thebe": False,
+        # not using directly colab because we want to customise the notebook for colab
+        # "colab_url": "https://colab.research.google.com",
     },
     "repository_url": "https://github.com/HMS-IAC/bobiac/",
     "repository_branch": "main",

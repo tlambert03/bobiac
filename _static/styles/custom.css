@@ -41,17 +41,38 @@ html[data-theme="dark"] .logo-dark {
   display: flex;
 }
 
+
 /* Custom download button styling */
+.custom-button {
+  padding: 0.1em 0.2em;
+  margin-bottom: 1em;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
 .custom-download-button {
   background-color: var(--bobiac-green) !important;
   color: var(--bobiac-darkgrey) !important;
-  padding: 0.5em 1em;
-  border-radius: 6px;
-  font-weight: bold;
-  text-decoration: none;
 }
 
 .custom-download-button:hover {
   background-color: var(--bobiac-darkgrey) !important;
   color: var(--bobiac-yellow) !important;
+}
+
+/* if the button has an img */
+.button-icon {
+  height: 20px;
+  vertical-align: middle;
+}
+
+.custom-pdf-frame {
+  width: 100%;
+  height: 420px;
+  border: 2px solid var(--bobiac-green);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 1em 0;
 }
