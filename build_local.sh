@@ -50,6 +50,19 @@ done
 
 echo "✅ Updated notebooks copied to _build/html/notebooks/"
 
+# Prepare PDF downloads in _build/html/pdfs/
+echo "📁 Copying PDF files to _build/html/pdfs/..."
+for pdf in $(find content/ -name "*.pdf"); do
+  rel_path="${pdf#content/}"  # remove 'content/' prefix
+  out_path="_build/html/pdfs/$rel_path"
+  out_dir=$(dirname "$out_path")
+  mkdir -p "$out_dir"
+  echo "📄 Copying $rel_path..."
+  cp "$pdf" "$out_path"
+done
+
+echo "✅ PDF files copied to _build/html/pdfs/"
+
 # Launch local server if -l passed
 if [ "$LAUNCH" = true ]; then
   echo "🛑 Checking for existing server on port 8000..."

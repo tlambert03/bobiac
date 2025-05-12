@@ -41,16 +41,17 @@ html[data-theme="dark"] .logo-dark {
   display: flex;
 }
 
-/* Download button notebook styling */
-.download-ipynb-button {
-  background-color: var(--bobiac-green);
-  color: var(--bobiac-darkgrey);
+/* Custom download button styling */
+.custom-download-button {
+  background-color: var(--bobiac-green) !important;
+  color: var(--bobiac-darkgrey) !important;
   padding: 0.5em 1em;
   border-radius: 6px;
   font-weight: bold;
+  text-decoration: none;
 }
 
-.download-ipynb-button:hover {
-  background-color: var(--bobiac-darkgrey);
-  color: var(--bobiac-yellow);
+.custom-download-button:hover {
+  background-color: var(--bobiac-darkgrey) !important;
+  color: var(--bobiac-yellow) !important;
 }

@@ -1,1 +1,0 @@
-# <i class="fas fa-image"></i> Introduction to Bioimage Analysis
