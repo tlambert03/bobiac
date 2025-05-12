@@ -53,11 +53,33 @@ echo "✅ Updated notebooks copied to _build/html/notebooks/"
 # Launch local server if -l passed
 if [ "$LAUNCH" = true ]; then
   echo "🛑 Checking for existing server on port 8000..."
-  PID=$(lsof -ti tcp:8000)
+
+  # Use Python subprocess with timeout to avoid hanging
+  echo "🔍 Checking port status..."
+  PID=$(python3 -c "
+import subprocess
+try:
+    p = subprocess.run(['lsof', '-ti', 'tcp:8000'], stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, timeout=3)
+    print(p.stdout.decode().strip())
+except subprocess.TimeoutExpired:
+    print('')
+"
+  )
+
   if [ -n "$PID" ]; then
     echo "⚠️ Port 8000 in use by PID $PID — killing it..."
     kill -9 "$PID"
-    echo "✅ Previous server on port 8000 killed."
+    echo "⏳ Waiting for port 8000 to free up..."
+    sleep 2
+    for i in {1..5}; do
+      if lsof -ti tcp:8000 >/dev/null; then
+        echo "⏳ Port 8000 still in use... waiting..."
+        sleep 1
+      else
+        break
+      fi
+    done
+    echo "✅ Port 8000 is now free."
   fi
 
   echo "🚀 Launching local server at http://localhost:8000 ..."
@@ -66,6 +88,7 @@ if [ "$LAUNCH" = true ]; then
   SERVER_PID=$!
   cd ../../
   sleep 1  # Give the server time to start
+  echo "🌐 Opening browser to http://localhost:8000/index.html ..."
   python -m webbrowser http://localhost:8000/index.html
   wait $SERVER_PID
 fi
