@@ -8,56 +8,56 @@ parts:
 # COURSE MATERIAL
 - caption: Course Material
   chapters:
-  - file: content/1-intro_bioimage_analysis/bioimage_analysis_intro.md
-  - file: content/2-intro_fluorescence_microscopy/fluorescence_microscopy_intro.md
+  - file: content/1_intro_bioimage_analysis/bioimage_analysis_intro.md
+  - file: content/2_intro_fluorescence_microscopy/fluorescence_microscopy_intro.md
 
-  - file: content/3-getting_started_with_python/getting_started_with_python.md
+  - file: content/3_getting_started_with_python/getting_started_with_python.md
     sections:
-      - file: content/3-getting_started_with_python/file1.md
-      - file: content/3-getting_started_with_python/file2.md
+      - file: content/3_getting_started_with_python/file1.md
+      - file: content/3_getting_started_with_python/file2.md
 
-  - file: content/4-python_basics/python_basics.md
+  - file: content/4_python_basics/python_basics.md
     sections:
-      - file: content/4-python_basics/python_basics_notebook
+      - file: content/4_python_basics/python_basics_notebook
 
-  - file: content/5-digital_images_intro/digital_images_intro.md
+  - file: content/5_digital_images_intro/digital_images_intro.md
     sections:
-      - file: content/5-digital_images_intro/python_for_digital_images.md
+      - file: content/5_digital_images_intro/python_for_digital_images.md
 
-  - file: content/6-segmantation/segmentation_intro.md
+  - file: content/6_segmantation/segmentation_intro.md
     sections:
-      - file: content/6-segmantation/classic/classic.md
+      - file: content/6_segmantation/classic/classic.md
         sections:
-          - file: content/6-segmantation/classic/filters.md
-          - file: content/6-segmantation/classic/thresholding.md
-          - file: content/6-segmantation/classic/labeling.md
-      - file: content/6-segmantation/machine_learning/machine_learning_intro.md
+          - file: content/6_segmantation/classic/filters.md
+          - file: content/6_segmantation/classic/thresholding.md
+          - file: content/6_segmantation/classic/labeling.md
+      - file: content/6_segmantation/machine_learning/machine_learning_intro.md
         sections:
-          - file: content/6-segmantation/machine_learning/machine_learning_with_ilastik.md
-      - file: content/6-segmantation/deep_learning/deep_learning_intro.md
+          - file: content/6_segmantation/machine_learning/machine_learning_with_ilastik.md
+      - file: content/6_segmantation/deep_learning/deep_learning_intro.md
         sections:
-          - file: content/6-segmantation/deep_learning/deep_learning_with_cellpose.md
+          - file: content/6_segmantation/deep_learning/deep_learning_with_cellpose.md
             sections:
-              - file: content/6-segmantation/deep_learning/cellpose_gui.md
-              - file: content/6-segmantation/deep_learning/cellpose_code.md
-              - file: content/6-segmantation/deep_learning/cellpose_retraining.md
+              - file: content/6_segmantation/deep_learning/cellpose_gui.md
+              - file: content/6_segmantation/deep_learning/cellpose_code.md
+              - file: content/6_segmantation/deep_learning/cellpose_retraining.md
 
-  - file: content/7-classification/classification.md
+  - file: content/7_classification/classification.md
     sections:
-      - file: content/7-classification/object_classification_with_ilastik.md
+      - file: content/7_classification/object_classification_with_ilastik.md
 
-  - file: content/8-measurement_and_quantification/measurement_and_quantification_intro.md
+  - file: content/8_measurement_and_quantification/measurement_and_quantification_intro.md
 
-  - file: content/9-colocalization/colocalization_intro.md
+  - file: content/9_colocalization/colocalization_intro.md
     sections:
-      - file: content/9-colocalization/object_based_colocalization.md
-      - file: content/9-colocalization/pixel_intensity_based_colocalization.md
+      - file: content/9_colocalization/object_based_colocalization.md
+      - file: content/9_colocalization/pixel_intensity_based_colocalization.md
 
-  - file: content/10-figure_creation/figure_creation_intro.md
+  - file: content/10_figure_creation/figure_creation_intro.md
     sections:
-      - file: content/10-figure_creation/figure_creation_with_python.md
+      - file: content/10_figure_creation/figure_creation_with_python.md
 
-  - file: content/11-reproducibility_and_image_ethics/reproducibility_and_image_ethics.md
+  - file: content/11_reproducibility_and_image_ethics/reproducibility_and_image_ethics.md
 
 
 # STUDENT WORKING GROUPS
