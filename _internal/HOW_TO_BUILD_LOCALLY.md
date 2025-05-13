@@ -4,9 +4,9 @@
 
 - Clone this repository.
 
-- Create a fresh environment.
-
 - Move into the cloned directory.
+
+- Create a fresh environment.
 
 - Install the requirements:
     - `pip install -r requirements.txt`
