@@ -41,7 +41,6 @@ html[data-theme="dark"] .logo-dark {
   display: flex;
 }
 
-
 /* Custom download button styling */
 .custom-button {
   padding: 0.1em 0.2em;
@@ -66,6 +65,13 @@ html[data-theme="dark"] .logo-dark {
 .button-icon {
   height: 20px;
   vertical-align: middle;
+}
+
+.custom-button-row {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .custom-pdf-frame {

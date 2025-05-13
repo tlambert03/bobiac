@@ -84,6 +84,6 @@ exclude_patterns = [
     ".venv",
     "_internal/**",
     "README.md",
-    "update_notebook.py",
+    "update_notebooks.py",
     "build.sh",
 ]

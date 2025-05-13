@@ -37,18 +37,27 @@ echo "🔧 Building Jupyter Book with Sphinx..."
 python3 -m sphinx -a . -b html _build/html
 echo "📘 Book built successfully at _build/html/"
 
-# Prepare built notebook downloads in _build/html/notebooks/
-echo "📁 Preparing downloadable notebooks..."
+# Prepare built notebook downloads in _build/html/notebooks/ and 
+# prepare built colab notebook in _build/html/colab_notebooks/
+echo "📁 Preparing notebooks for download and colab..."
 for notebook in $(find content/ -name "*.ipynb"); do
   rel_path="${notebook#content/}"  # remove 'content/' prefix
-  out_path="_build/html/notebooks/$rel_path"
-  out_dir=$(dirname "$out_path")
-  mkdir -p "$out_dir"
+  notebook_path="_build/html/notebooks/$rel_path"
+  colab_path="_build/html/colab_notebooks/$rel_path"
+
+  notebook_dir=$(dirname "$notebook_path")
+  colab_dir=$(dirname "$colab_path")
+
+  mkdir -p "$notebook_dir"
+  mkdir -p "$colab_dir"
+
   echo "📓 Processing $rel_path..."
-  python3 "$(dirname "$0")/update_notebook.py" "$notebook" "$out_path"
+  python3 "$(dirname "$0")/update_notebooks.py" "$notebook" "$notebook_path"
+  python3 "$(dirname "$0")/convert_to_colab_notebooks.py" "$notebook" "$colab_path"
 done
 
 echo "✅ Updated notebooks copied to _build/html/notebooks/"
+echo "✅ Colab notebooks copied to _build/html/colab_notebooks/"
 
 # Prepare PDF downloads in _build/html/pdfs/
 echo "📁 Copying PDF files to _build/html/pdfs/..."
