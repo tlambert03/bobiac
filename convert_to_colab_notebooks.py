@@ -69,14 +69,17 @@ def _create_pip_install_dependencies_cell(cell: nbformat.NotebookNode) -> list[s
             if line.startswith("#") and '"' in line:
                 dep = line.split('"')[1]
                 if "ndv" in dep:
-                    continue  # Skip ndv
-                deps.append(dep)
+                    # Comment out the pip line with a note
+                    if "[" in dep or "]" in dep:
+                        dep = f'"{dep}"'
+                    install_commands.append(f"# %pip install {dep}  # ❌ ndv is not yet supported on Colab")
+                else:
+                    deps.append(dep)
 
     # Ensure matplotlib is included
     if "matplotlib" not in [d.strip('"') for d in deps]:
         deps.append("matplotlib")
 
-    # Generate pip install commands (quoted if extras used)
     for dep in deps:
         if "[" in dep or "]" in dep:
             dep = f'"{dep}"'
