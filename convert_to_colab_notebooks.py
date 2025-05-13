@@ -6,10 +6,11 @@ from pathlib import Path
 def convert_to_colab_notebook(input_path: str | Path, output_path: str | Path) -> None:
     nb = nbformat.read(input_path, as_version=4)
     new_cells = []
+    use_ndv: bool = False
 
     for i, cell in enumerate(nb.cells):
         tags = cell.get("metadata", {}).get("tags", [])
-        
+
         # remove buttons from the first cell and keep only the title
         if i == 0 and cell.cell_type == "markdown":
             lines = cell.source.strip().splitlines()
@@ -28,9 +29,9 @@ def convert_to_colab_notebook(input_path: str | Path, output_path: str | Path) -
         # replace the script cell with pip installs for Colab
         if cell.cell_type == "code" and "# /// script" in cell.source:
             if install_commands := _create_pip_install_dependencies_cell(cell):
-                cell.source = "# Auto-generated Colab install cell\n" + "\n".join(
-                    install_commands
-                )
+                cell.source = "\n".join(install_commands)
+                if not use_ndv and "ndv" in cell.source:
+                    use_ndv = True
 
         # comment out any cell that uses ndv
         if cell.cell_type == "code" and "ndv" in cell.source:
@@ -38,14 +39,23 @@ def convert_to_colab_notebook(input_path: str | Path, output_path: str | Path) -
             updated_lines = []
             for line in lines:
                 if "ndv" in line:
-                    updated_lines.append(
-                        f"# {line}  # ❌ ndv is not yet supported on Colab. Use matplotlib instead."
-                    )
+                    updated_lines.append(f"# {line}")
                 else:
                     updated_lines.append(line)
             cell.source = "\n".join(updated_lines)
 
         new_cells.append(cell)
+
+    # Add a new cell at the top for pip installs
+    if use_ndv:
+        pip_install_cell = nbformat.v4.new_code_cell(
+            source=(
+                "# NOTE: The `ndv` package is not yet supported in Colab. Most of the "
+                "`ndv` lines are commented out.\n# The `matplotlib` package can be used "
+                "instead (already included in the pip list)."
+            )
+        )
+        new_cells.insert(0, pip_install_cell)
 
     nb.cells = new_cells
     nbformat.write(nb, output_path)
