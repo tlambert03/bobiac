@@ -2,7 +2,7 @@
   --bobiac-green: rgb(116, 184, 104);
   --bobiac-yellow: rgb(255, 193, 9);
   --bobiac-darkgrey: rgb(49, 49, 49);
-  --pst-color-secondary: var(--bobiac-green) !important;
+  --pst-color-secondary: var(--bobiac-yellow) !important;
 }
 
 /* Light theme overrides */
