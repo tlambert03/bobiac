@@ -24,9 +24,9 @@ jobs:
       # glfw, vispy, or napari-based notebooks without errors.
       - name: Set up OpenGL and virtual display
         run: |
-          sudo apt-get update
-          sudo apt-get install -y xvfb libgl1-mesa-dri libglx-mesa0 libglu1-mesa mesa-utils
-          Xvfb :99 -screen 0 1920x1080x24 &
+          sudo apt-get update -y
+          sudo apt-get install -y xvfb libgl1-mesa-glx libglu1-mesa mesa-utils
+          nohup Xvfb :99 -screen 0 1920x1080x24 > /dev/null 2>&1 &
           echo "DISPLAY=:99" >> $GITHUB_ENV
 
       # ✅ Verify OpenGL is working
