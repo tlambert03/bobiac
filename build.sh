@@ -31,7 +31,7 @@ for notebook in $(find content/ -name "*.ipynb"); do
 
   echo "📓 Processing $rel_path..."
   python3 "$(dirname "$0")/update_notebooks.py" "$notebook" "$notebook_path"
-  python3 "$(dirname "$0")/convert_to_colab_notebooks.py" "$notebook" "$colab_path"
+  python3 "$(dirname "$0")/update_notebooks_colab.py" "$notebook" "$colab_path"
 done
 
 echo "✅ Updated notebooks copied to _build/html/notebooks/"

@@ -17,6 +17,17 @@ def convert_to_colab_notebook(input_path: str | Path, output_path: str | Path) -
             if lines and lines[0].startswith("# "):
                 cell.source = lines[0]
 
+        # clear the cell input if it has the 'teacher' tag (it is an exercise)
+        if "teacher" in tags:
+            # remove the tag
+            tags.remove("teacher")
+            # clear rthe cell content
+            cell.source = ""
+            # clear the cell output if any
+            if cell.cell_type == "code":
+                cell.outputs = []
+                cell.execution_count = None
+
         # remove entire cell if it contains certain tags
         if any(tag in tags for tag in ["remove-input", "remove-output", "remove-cell"]):
             continue
