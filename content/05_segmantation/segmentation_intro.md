@@ -1,4 +1,4 @@
-# <strong>6</strong> - <i class="fa-solid fa-disease"></i> Semantic & Instance Segmentation
+# <strong>05</strong> - <i class="fa-solid fa-disease"></i> Semantic & Instance Segmentation
 
 What is it? What is the difference between semantic and instance segmentation? ...
 

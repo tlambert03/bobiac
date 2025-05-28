@@ -1,4 +1,4 @@
-# <strong>01</strong> - <i class="fas fa-image"></i> Introduction to Bioimage Analysis
+# <strong>03</strong> - <i class="fab fa-python"></i> The Python Basics
 
 ## Something
 
@@ -12,5 +12,5 @@
 
 <iframe
   class="custom-pdf-frame"
-  src="../../pdfs/01_intro_bioimage_analysis/templates.pdf">
+  src="../../pdfs/03_python_basics/templates.pdf">
 </iframe>
