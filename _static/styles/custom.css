@@ -83,3 +83,9 @@ html[data-theme="dark"] .logo-dark {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 0.5em;
 }
+
+.custom-title {
+  background-color: var(--bobiac-green);
+  border-radius: 8px;
+  padding: 0.2em;
+}
