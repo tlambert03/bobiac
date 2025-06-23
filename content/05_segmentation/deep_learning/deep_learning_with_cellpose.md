@@ -1,1 +1,1 @@
-# Segmentation using Cellpose (Deep Learning)
+# Deep Learning: Cellpose

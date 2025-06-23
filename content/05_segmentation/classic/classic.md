@@ -1,4 +1,4 @@
-# Classic Segmentation Methods
+# Classic Methods
 
 Description...
 
