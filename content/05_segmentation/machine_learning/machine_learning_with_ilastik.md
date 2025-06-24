@@ -1,8 +1,6 @@
 # Machine Learning: Ilastik
 
-Machine learning is a computational approach where algorithms identify patterns and make predictions or decisions based on data rather than explicit programming. Supervised machine learning, specifically, involves training algorithms using labeled examples, allowing them to classify new, unseen data accurately.
-
-In this context, we will use [**Ilastik**](https://www.ilastik.org), a **free**, **open-source** software tool designed for **interactive image analysis**, including tasks such as **segmentation** and **classification**, without requiring prior expertise in machine learning or programming.
+[**Ilastik**](https://www.ilastik.org) is a **free**, **open-source** software tool designed for **interactive image analysis**, including tasks such as **segmentation** and **classification** on multi-dimansional datasets (e.g. 2D, 3D), without requiring prior expertise in machine learning or programming.
 
 <div align="center">
     <img class="custom-image" src="../../../_static/images/ilastik_startup.png" alt="Ilastik Logo" width="700">
@@ -18,4 +16,4 @@ The software is well-documented, with comprehensive resources available [here](h
 
 ## What's Next?
 
-In the following two sections, we will first use **Ilastik** to perform [**semantic segmentation using **pixel classification**](./pixel_classification_with_ilastik.md), and then demonstrate how to convert these results into [**instance segmentation**](./from_ilastik_masks_to_labels.ipynb).
+In the following two sections, we will first use **Ilastik** to perform [**semantic segmentation using pixel classification**](./pixel_classification_with_ilastik.md), and then demonstrate how to convert these results into [**instance segmentation**](./from_ilastik_masks_to_labels.ipynb).
