@@ -12,7 +12,7 @@ During the course we will explore different approaches to semantic and instance 
 
 ***TODO: UPDATE LINK TO SECTIONS***
 
-**Table of Contents**
+## Table of Contents
 
 - [Classical Segmentation](./classic/classic.md)
 - [Machine Learning: Ilastik](./machine_learning/machine_learning_with_ilastik.md)
