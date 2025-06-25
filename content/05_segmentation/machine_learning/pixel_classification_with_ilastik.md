@@ -106,10 +106,31 @@ Once you are satisfied with the results, you now need to check if the classifier
 
 ### 5. Export the Results
 
+Once the trained model works well with all the training images, you can either [**export the results**](https://www.ilastik.org/documentation/basics/export) (e.g. probability maps, semantic segmentation) for the training images or run the classifier in [**batch mode**](https://www.ilastik.org/documentation/basics/batch) to process many images at once.
+
+Either way, the first step is to select what you want to export by choosing an option in the ***Source*** drop-down menu in the ***Prediction Export*** step (on the left side of the GUI). Let's for now select with ***Probabilities*** (probability maps).
+
 <div align="center"> <img class="custom-image" src="../../../_static/images/ilastik/5a.png" alt="Ilastik Logo" width="800"> </div>
+
+The second step is to select how we want to export the results. By clicking on the ***Choose Export Image Settings...*** button, a new window will open where you can select different options including the export format and the output folder where to save the result. Select "tif" as format and leave as default the output file path since it automatically is set to save the results in the same folder as the input images with the suffix appropriately changing depending on the option you select in the ***Source*** drop-down menu (e.g. *_Probabilities*).
 
 <div align="center"> <img class="custom-image" src="../../../_static/images/ilastik/5b.png" alt="Ilastik Logo" width="800"> </div>
 
-### 6. Batch Mode
+You can click ***Ok*** to close the window and then click on the ***Export All*** button to start exporting the predictions for all the training images. If you look in the folder where your training images are stored, you will find the exported results with the suffix *_Probabilities*.
+
+To continue the exercise we also need to export the **semantic segmentation** results. Therfore, go back to the ***Source*** drop-down menu and select ***Simple Segmentation*** (semantic). Then click on ***Export All*** again to export the semantic segmentation results for all the training images. The exported files will have the suffix *_Simple Segmentation*.
+
+### 6. Batch Processing
+
+Since we will need to analyze more images for future sections of the course, we now want to **run the classifier on all the images in the dataset**. To do this, we need to select the ***Batch Processing*** step (on the left side of the GUI) and simply *Drag and drop* all the files in the dataset folder on the white area of the GUI.
 
 <div align="center"> <img class="custom-image" src="../../../_static/images/ilastik/6b.png" alt="Ilastik Logo" width="800"> </div>
+
+By clicking on the ***Process all files*** button, the classifier will be run on all the images in the dataset.
+Depending on the option you select in the previous ***Prediction Export***, the results will be saved in the same folder as the input images with the suffix *_Probabilities* or *_Simple Segmentation*. **Make sure you run the classifier for both options to have all the results available for the next sections of the course**.
+
+### 7. What's Next?
+
+From this **Ilastik** pipeline we managed to extract both the **probability maps** and the **semantic segmentation** of the nuclei in the images. In the next sections of the course, we will first use the **semantic segmentation** and [convert it into **instance segmentation**](./from_ilastik_masks_to_labels.ipynb) (as in the [classic segmentastion methods](../classic/classic.md) section). And then we will use the **probability maps** to train an **Ilastik** [**Object Classification** workflow](../../06_classification/object_classification_with_ilastik.md) to classify the nuclei into different classes based on their cell cycle stage.
+
+***TODO: UPDATE LINK TO CLASSIC SEGMENTATION METHODS SECTION and OBJECT CLASSIFICATION SECTION ONCE THEY ARE READY***
