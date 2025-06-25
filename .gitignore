@@ -1,5 +1,5 @@
 .venv
 .DS_Store
 
-# prevent from adding the _buid directory
+# prevent from adding the _build directory
 _build

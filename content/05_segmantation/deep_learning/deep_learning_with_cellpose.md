@@ -1,1 +1,0 @@
-# Cellpose for Cell Segmentation

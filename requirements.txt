@@ -3,3 +3,4 @@ ndv[jupyter,vispy]
 tifffile
 scikit-image
 matplotlib
+pre-commit
