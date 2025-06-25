@@ -11,6 +11,7 @@
 - Install the requirements:
   - `pip install -r requirements.txt`
   - `NOTE`: if to use on of your notebook you require a specific package, make sure to add it to the `requirements.txt` file.
+  - I added the `pre-commit` package to the requirements that also checks for typing errors and formatting issues, so after installing the "requirements.txt" file, run `pre-commit install` to set it up. This will ensure that pre-commit and typing checks are run automatically before each commit.
 
 - To build the book (on Mac/Linux):
   - run the command:

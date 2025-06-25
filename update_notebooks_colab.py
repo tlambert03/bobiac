@@ -21,7 +21,7 @@ def convert_to_colab_notebook(input_path: str | Path, output_path: str | Path) -
         if "teacher" in tags:
             # remove the tag
             tags.remove("teacher")
-            # clear rthe cell content
+            # clear the cell content
             cell.source = ""
             # clear the cell output if any
             if cell.cell_type == "code":
