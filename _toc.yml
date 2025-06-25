@@ -72,6 +72,6 @@ parts:
   - url: https://iac.hms.harvard.edu/bobiac/2025
     title: BoBiAC
   - url: https://iac.hms.harvard.edu
-    title: Image Analysys Collaboratory
+    title: Image Analysis Collaboratory
   - url: https://iac.hms.harvard.edu/bobiac/2025/uv_instruction.html
     title: uv Installation Instruction

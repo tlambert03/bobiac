@@ -1,6 +1,6 @@
 # Machine Learning: Ilastik
 
-[**Ilastik**](https://www.ilastik.org) is a **free**, **open-source** software tool designed for **interactive image analysis**, including tasks such as **segmentation** and **classification** on multi-dimansional datasets (e.g. 2D, 3D), without requiring prior expertise in machine learning or programming.
+[**Ilastik**](https://www.ilastik.org) is a **free**, **open-source** software tool designed for **interactive image analysis**, including tasks such as **segmentation** and **classification** on multi-dimensional datasets (e.g. 2D, 3D), without requiring prior expertise in machine learning or programming.
 
 <div align="center">
     <img class="custom-image" src="../../../_static/images/ilastik_startup.png" alt="Ilastik Logo" width="700">

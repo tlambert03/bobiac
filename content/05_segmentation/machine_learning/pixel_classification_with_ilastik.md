@@ -18,7 +18,7 @@ For a detailed workflow instruction, you can refer to the [Ilastik Pixel Classif
 
 ### 1. Select the Workflow
 
-When you open **Ilastik**, you will see the [Startup Screen](https://www.ilastik.org/documentation/basics/startup) with various workflows. Select the ***Pixel Classification*** workflow by clicking on it. You will be automaticaly brought to the **Input Data** step.
+When you open **Ilastik**, you will see the [Startup Screen](https://www.ilastik.org/documentation/basics/startup) with various workflows. Select the ***Pixel Classification*** workflow by clicking on it. You will be automatically brought to the **Input Data** step.
 
 <div align="center"> <img class="custom-image" src="../../../_static/images/ilastik/1a.png" alt="Ilastik Logo" width="800"> </div>
 
@@ -66,11 +66,11 @@ After clicking on ***Ok***, you can **visualize the effect of the selected featu
 
 ### 4. Train the Classifier
 
-The next step is to <a href="https://www.ilastik.org/documentation/pixelclassification/pixelclassification#training-the-classifier" target="_blank"><strong>train the classifier</strong></a> based on the features you selected. This is an iteractive process where you will need to **label a few pixels** in the image to provide the classifier with examples of the different classes.
+The next step is to <a href="https://www.ilastik.org/documentation/pixelclassification/pixelclassification#training-the-classifier" target="_blank"><strong>train the classifier</strong></a> based on the features you selected. This is an interactive process where you will need to **label a few pixels** in the image to provide the classifier with examples of the different classes.
 
-In the ***Training*** step (on the left side of the GUI) you can **add**, **remove** or **edit** the classes (labels) that you want to use for the classification. For this exercise, we will use two classes: ***nuclei*** and ***background***. To rename the dafault classes, *Label 1* and *Label 2*, double-click on each class and type the new name (You can also change the class color by double-clicking on the color box next to the class name).
+In the ***Training*** step (on the left side of the GUI) you can **add**, **remove** or **edit** the classes (labels) that you want to use for the classification. For this exercise, we will use two classes: ***nuclei*** and ***background***. To rename the default classes, *Label 1* and *Label 2*, double-click on each class and type the new name (You can also change the class color by double-clicking on the color box next to the class name).
 
-Now you can start by chosing few pixels in the image that correspond to the ***nuclei*** class; select the ***nuclei*** class, select the *Brush* tool (should be the default) and draw a short line over some pixel inside one nucleus. Next repeat the process for the ***background*** class, selecting some pixels that correspond to the background.
+Now you can start by choosing few pixels in the image that correspond to the ***nuclei*** class; select the ***nuclei*** class, select the *Brush* tool (should be the default) and draw a short line over some pixel inside one nucleus. Next repeat the process for the ***background*** class, selecting some pixels that correspond to the background.
 
 <div class="alert alert-info">
     <strong>NOTE:</strong> few interactive tips:
@@ -118,7 +118,7 @@ The second step is to select how we want to export the results. By clicking on t
 
 You can click ***Ok*** to close the window and then click on the ***Export All*** button to start exporting the predictions for all the training images. If you look in the folder where your training images are stored, you will find the exported results with the suffix *_Probabilities*.
 
-To continue the exercise we also need to export the **semantic segmentation** results. Therfore, go back to the ***Source*** drop-down menu and select ***Simple Segmentation*** (semantic). Then click on ***Export All*** again to export the semantic segmentation results for all the training images. The exported files will have the suffix *_Simple Segmentation*.
+To continue the exercise we also need to export the **semantic segmentation** results. Therefore, go back to the ***Source*** drop-down menu and select ***Simple Segmentation*** (semantic). Then click on ***Export All*** again to export the semantic segmentation results for all the training images. The exported files will have the suffix *_Simple Segmentation*.
 
 ### 6. Batch Processing
 

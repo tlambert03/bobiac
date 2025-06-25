@@ -2,6 +2,7 @@ import nbformat
 import sys
 from pathlib import Path
 
+
 def update_notebooks(input_path: str | Path, output_path: str | Path) -> None:
     nb = nbformat.read(input_path, as_version=4)
     cleaned_cells = []
@@ -18,7 +19,7 @@ def update_notebooks(input_path: str | Path, output_path: str | Path) -> None:
         if "teacher" in tags:
             # remove the tag
             tags.remove("teacher")
-            # clear rthe cell content
+            # clear the cell content
             cell.source = ""
             # clear the cell output if any
             if cell.cell_type == "code":
@@ -38,6 +39,7 @@ def update_notebooks(input_path: str | Path, output_path: str | Path) -> None:
 
     nb.cells = cleaned_cells
     nbformat.write(nb, output_path)
+
 
 if __name__ == "__main__":
     src = Path(sys.argv[1])
