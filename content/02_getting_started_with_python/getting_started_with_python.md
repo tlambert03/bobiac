@@ -1,3 +1,3 @@
-# <strong>02</strong> - <i class="fab fa-python"></i> Introcuction to Python I
+# <strong>02</strong> - <i class="fab fa-python"></i> Introduction to Python I
 
 In this section we will talk about what is Python, how to install it, and how to run your first Python program...
