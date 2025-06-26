@@ -85,8 +85,8 @@ html[data-theme="dark"] .logo-dark {
 }
 
 .custom-title {
+  color: #ffffff;
   background-color: var(--bobiac-green);
   border-radius: 6px;
-  padding: 0.2em;
-  color: #ffffff;
+  padding: 0.5rem;
 }
