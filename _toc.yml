@@ -24,23 +24,22 @@ parts:
     sections:
       - file: content/04_digital_images_intro/python_for_digital_images.md
 
-  - file: content/05_segmantation/segmentation_intro.md
+  - file: content/05_segmentation/segmentation_intro.md
     sections:
-      - file: content/05_segmantation/classic/classic.md
+      - file: content/05_segmentation/classic/classic.md
         sections:
-          - file: content/05_segmantation/classic/filters.md
-          - file: content/05_segmantation/classic/thresholding.md
-          - file: content/05_segmantation/classic/labeling.md
-      - file: content/05_segmantation/machine_learning/machine_learning_intro.md
+          - file: content/05_segmentation/classic/filters.md
+          - file: content/05_segmentation/classic/thresholding.md
+          - file: content/05_segmentation/classic/labeling.md
+      - file: content/05_segmentation/machine_learning/machine_learning_with_ilastik.md
         sections:
-          - file: content/05_segmantation/machine_learning/machine_learning_with_ilastik.md
-      - file: content/05_segmantation/deep_learning/deep_learning_intro.md
+          - file: content/05_segmentation/machine_learning/pixel_classification_with_ilastik.md
+          - file: content/05_segmentation/machine_learning/from_ilastik_masks_to_labels
+      - file: content/05_segmentation/deep_learning/deep_learning_with_cellpose.md
         sections:
-          - file: content/05_segmantation/deep_learning/deep_learning_with_cellpose.md
-            sections:
-              - file: content/05_segmantation/deep_learning/cellpose_gui.md
-              - file: content/05_segmantation/deep_learning/cellpose_code.md
-              - file: content/05_segmantation/deep_learning/cellpose_retraining.md
+          - file: content/05_segmentation/deep_learning/cellpose_gui.md
+          - file: content/05_segmentation/deep_learning/cellpose_code.md
+          - file: content/05_segmentation/deep_learning/cellpose_retraining.md
 
   - file: content/06_classification/classification.md
     sections:
@@ -74,4 +73,6 @@ parts:
   - url: https://iac.hms.harvard.edu/bobiac/2025
     title: BoBiAC
   - url: https://iac.hms.harvard.edu
-    title: Image Analysys Collaboratory
+    title: Image Analysis Collaboratory
+  - url: https://iac.hms.harvard.edu/bobiac/2025/uv_instruction.html
+    title: uv Installation Instruction
