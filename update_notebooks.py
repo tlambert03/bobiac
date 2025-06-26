@@ -60,7 +60,14 @@ def update_notebooks(input_path: str | Path, output_path: str | Path) -> None:
             Path(input_path).name == "intro_to_python_II.ipynb"
             and cell.cell_type == "markdown"
         ):
-            for old_link, new_link in map_03_python_II_boke_to_notebook.items():
+            # Sort by length (descending) to process longer patterns first
+            # This prevents partial matches from breaking longer patterns
+            sorted_mappings = sorted(
+                map_03_python_II_boke_to_notebook.items(),
+                key=lambda x: len(x[0]),
+                reverse=True,
+            )
+            for old_link, new_link in sorted_mappings:
                 cell.source = cell.source.replace(old_link, new_link)
 
         cleaned_cells.append(cell)
