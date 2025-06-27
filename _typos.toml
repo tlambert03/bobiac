@@ -12,6 +12,8 @@
 "nd" = "nd"    # Ignore "nd" when used in technical contexts
 
 "ba" = "ba"
+"caf" = "caf"
+"ede" = "ede"
 
 [files]
 # You can also exclude specific files or patterns if needed
