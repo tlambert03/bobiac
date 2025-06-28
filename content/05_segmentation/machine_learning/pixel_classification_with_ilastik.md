@@ -92,6 +92,14 @@ The predictions will be displayed as an overlay on the image and colored accordi
 
 <div align="center"> <img class="custom-image" src="../../../_static/images/ilastik/3b.png" alt="Ilastik Logo" width="800"> </div>
 
+<div class="alert alert-info">
+    <strong>TIP:</strong> If you want to have control over the brightness and contrast of the selected image, you can <em>right-click</em> on <strong><em>Raw Input</em></strong> in the <strong><em>Group Visibility</em></strong> section (on the bottom left side of the GUI) and select <strong><em>Adjust thresholds</em></strong>. This will open a new window where you can <em>set the minimum and maximum display range</em> for the image.
+    <br><br>
+    <div align="center">
+        <img class="custom-image" src="../../../_static/images/ilastik/range.png" alt="Ilastik Logo" width="650">
+    </div>
+</div>
+
 In a similar way, you can visualize and toggle on and off the resulting **semantic segmentation** by pressing the **s** key on your keyboard.
 
 <div align="center"> <img class="custom-image" src="../../../_static/images/ilastik/3c.png" alt="Ilastik Logo" width="800"> </div>
