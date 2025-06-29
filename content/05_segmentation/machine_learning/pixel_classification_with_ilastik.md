@@ -66,22 +66,24 @@ After clicking on ***Ok***, you can **visualize the effect of the selected featu
 
 ### 4. Train the Classifier
 
-The next step is to <a href="https://www.ilastik.org/documentation/pixelclassification/pixelclassification#training-the-classifier" target="_blank"><strong>train the classifier</strong></a> based on the features you selected. This is an interactive process where you will need to **label a few pixels** in the image to provide the classifier with examples of the different classes.
+The next step is to [train the classifier](https://www.ilastik.org/documentation/pixelclassification/pixelclassification#training-the-classifier) based on the features you selected. This is an interactive process where you will need to **label a few pixels** in the image to provide the classifier with examples of the different classes.
 
 In the ***Training*** step (on the left side of the GUI) you can **add**, **remove** or **edit** the classes (labels) that you want to use for the classification. For this exercise, we will use two classes: ***nuclei*** and ***background***. To rename the default classes, *Label 1* and *Label 2*, double-click on each class and type the new name (You can also change the class color by double-clicking on the color box next to the class name).
 
 Now you can start by choosing few pixels in the image that correspond to the ***nuclei*** class; select the ***nuclei*** class, select the *Brush* tool (should be the default) and draw a short line over some pixel inside one nucleus. Next repeat the process for the ***background*** class, selecting some pixels that correspond to the background.
 
 <div class="alert alert-info">
-    <strong>NOTE:</strong> few interactive tips:
-    <br>
-    Use <strong>cmd+z</strong> (macOS) or <strong>ctrl+z</strong> (Windows) to <strong>undo</strong> the last action.
-    <br>
-    Use the <strong>Erase</strong> tool to <strong>remove</strong> the annotations.
-    <br>
-    If required, increase the <strong>Brush Size</strong> using the <strong>Size</strong> control.
-    <br>
-    To navigate the image viewer, <strong>zoom in and out</strong> using the <strong>mouse wheel</strong> (or the trackpad) together <strong>with</strong> the <strong>cmd (macOS) or ctrl (Windows) key</strong>, and <strong>pan</strong> the image with the <strong>mouse left button</strong> while holding the <strong>shift</strong> key.
+    <strong>TIPS:</strong>
+    <ul>
+        <li>Use <strong>Cmd+Z</strong> (macOS) or <strong>Ctrl+Z</strong> (Windows) to <strong>undo</strong> the last action.</li>
+        <li>Use the <strong>Erase</strong> tool to <strong>remove</strong> the annotations.</li>
+        <li>If required, increase the <strong>Brush Size</strong> using the <strong>Size</strong> control.</li>
+        <li>To navigate the image viewer, <strong>zoom in and out</strong> using the <strong>mouse wheel</strong> (or trackpad) together <strong>with</strong> the <strong>Cmd (macOS) or Ctrl (Windows) key</strong>, and <strong>pan</strong> the image with the <strong>left mouse button</strong> while holding the <strong>Shift</strong> key.</li>
+        <li>To control brightness and contrast, <em>right-click</em> on <strong><em>Raw Input</em></strong> in the <strong><em>Group Visibility</em></strong> section (bottom left) and select <strong><em>Adjust thresholds</em></strong> to set the minimum and maximum display range.</li>
+    </ul>
+    <div align="center">
+        <img class="custom-image" src="../../../_static/images/ilastik/range.png" alt="Ilastik Logo" width="650">
+    </div>
 </div>
 
 <div align="center"> <img class="custom-image" src="../../../_static/images/ilastik/3a.png" alt="Ilastik Logo" width="800"> </div>
@@ -91,14 +93,6 @@ To train the classifier and see the predictions, press the ***Live Update*** but
 The predictions will be displayed as an overlay on the image and colored according to the class colors you defined. **Prediction overlay** can be **toggled on and off** by pressing the **p** key on your keyboard.
 
 <div align="center"> <img class="custom-image" src="../../../_static/images/ilastik/3b.png" alt="Ilastik Logo" width="800"> </div>
-
-<div class="alert alert-info">
-    <strong>TIP:</strong> If you want to have control over the brightness and contrast of the selected image, you can <em>right-click</em> on <strong><em>Raw Input</em></strong> in the <strong><em>Group Visibility</em></strong> section (on the bottom left side of the GUI) and select <strong><em>Adjust thresholds</em></strong>. This will open a new window where you can <em>set the minimum and maximum display range</em> for the image.
-    <br><br>
-    <div align="center">
-        <img class="custom-image" src="../../../_static/images/ilastik/range.png" alt="Ilastik Logo" width="650">
-    </div>
-</div>
 
 In a similar way, you can visualize and toggle on and off the resulting **semantic segmentation** by pressing the **s** key on your keyboard.
 
@@ -124,7 +118,7 @@ The second step is to select how we want to export the results. By clicking on t
 
 <div align="center"> <img class="custom-image" src="../../../_static/images/ilastik/5b.png" alt="Ilastik Logo" width="800"> </div>
 
-You can click ***Ok*** to close the window and then click on the ***Export All*** button to start exporting the predictions for all the training images. If you look in the folder where your training images are stored, you will find the exported results with the suffix *_Simple Segmentation*.
+Click on the ***Export All*** button to start exporting the predictions for all the training images. If you look in the folder where your training images are stored, you will find the exported results with the suffix *_Simple Segmentation*.
 
 ### 6. Batch Processing
 
@@ -133,7 +127,7 @@ Since we will need to analyze more images for future sections of the course, we 
 <div align="center"> <img class="custom-image" src="../../../_static/images/ilastik/6b.png" alt="Ilastik Logo" width="800"> </div>
 
 By clicking on the ***Process all files*** button, the classifier will be run on all the images in the dataset.
-Depending on the option you select in the previous ***Prediction Export***, the results will be saved in the same folder as the input images with the corresponding suffix, in our case *_Simple Segmentation*.
+Depending on the option you select in the previous ***Prediction Export***, the results will be saved in the same folder as the input images with the corresponding suffix, in our case *_Simple Segmentation.tif*.
 
 ### 7. What's Next?
 
