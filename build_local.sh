@@ -32,6 +32,13 @@ if [ "$CLEAN" = true ]; then
   fi
 fi
 
+# Process styled cells BEFORE building the book
+echo "🎨 Processing cells with style tags for book build..."
+for notebook in $(find content/ -name "*.ipynb"); do
+  echo "🎨 Processing style tags in $notebook..."
+  python3 "$(dirname "$0")/update_notebooks_style.py" "$notebook"
+done
+
 # Build the book
 echo "🔧 Building Jupyter Book with Sphinx..."
 python3 -m sphinx -a . -b html _build/html
