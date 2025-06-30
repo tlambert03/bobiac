@@ -1,4 +1,4 @@
-# <strong>06</strong> - <i class="fa-solid fa-shapes"></i> Object Classification with Ilastik
+# Ilastik for Object Classification
 
 In this section, we will explore how to use **Ilastik** for [**object classification**](https://www.ilastik.org/documentation/objects/objects). This process is very similar to what we have done in the [**pixel classification**](../05_segmentation/machine_learning/pixel_classification_with_ilastik.md) section and still involves training a machine learning model. However, instead of classifying pixels, we will **classify entire objects** based on **instance segmentation** images.
 

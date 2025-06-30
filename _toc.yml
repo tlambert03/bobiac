@@ -37,7 +37,9 @@ parts:
           - file: content/05_segmentation/deep_learning/cellpose_code.md
           - file: content/05_segmentation/deep_learning/cellpose_retraining.md
 
-  - file: content/06_object_classification/object_classification_with_ilastik.md
+  - file: content/06_object_classification/object_classification.md
+    sections:
+    - file: content/06_object_classification/object_classification_with_ilastik.md
 
   - file: content/07_measurement_and_quantification/measurement_and_quantification_intro.md
 
