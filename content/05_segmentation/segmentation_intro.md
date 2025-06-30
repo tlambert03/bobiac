@@ -14,6 +14,8 @@ During the course we will explore different approaches to semantic and instance 
 
 ***TODO: UPDATE LINK TO SECTIONS***
 
+***TODO: ADD CLASSIC, ML and DL DIAGRAM***
+
 ## Table of Contents
 
 - [Classical Segmentation](./classic/classic.md)
