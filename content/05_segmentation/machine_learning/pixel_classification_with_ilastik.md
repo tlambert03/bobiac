@@ -5,7 +5,7 @@ In this section, we will explore how to use **Ilastik** for **semantic segmentat
 In this exercise, we will use the <a href="../../../_static/data/05_segmentation_ilastik.zip" download> <i class="fas fa-download"></i> pixel classification dataset</a> of nuclei images, and the goal is to train a classifier to distinguish between **nuclei** and **background**.
 
 <div class="alert alert-info">
-    <strong>NOTE:</strong> Ilastik supports a variety of <a href="https://www.ilastik.org/documentation/basics/dataselection#formats" target="_blank">data formats</a>. For simplicity and ease of use during this course, we will use images saved as <strong>.tif</strong> files. However, Ilastik recommends using files saved as <strong>.h5</strong> for optimal performance. If you wish to use your own dataset and need to convert your files to <strong>.h5</strong>, Ilastik provides tools such as a <a href="https://www.ilastik.org/documentation/fiji_export/plugin" target="_blank">Fiji plugin</a> or a <a href="https://github.com/ilastik/ilastik/tree/main/notebooks/h5convert" target="_blank">Jupyter Notebook</a> with instructions.
+    <strong>NOTE:</strong> Ilastik supports a variety of <a href="https://www.ilastik.org/documentation/basics/dataselection#formats" target="_blank">data formats</a>. For simplicity and ease of use during this course, we will use images saved as <strong>.tif</strong> files. However, Ilastik recommends using files saved as <strong>.h5</strong> for [optimal performance](https://www.ilastik.org/documentation/basics/performance_tips). If you wish to use your own dataset and need to convert your files to <strong>.h5</strong>, Ilastik provides tools such as a <a href="https://www.ilastik.org/documentation/fiji_export/plugin" target="_blank">Fiji plugin</a> or a <a href="https://github.com/ilastik/ilastik/tree/main/notebooks/h5convert" target="_blank">Jupyter Notebook</a> with instructions.
 </div>
 
 ## What is Pixel Classification?
@@ -106,19 +106,17 @@ Once you are satisfied with the results, you now need to check if the classifier
 
 ### 5. Export the Results
 
-Once the trained model works well with all the training images, you can either [**export the results**](https://www.ilastik.org/documentation/basics/export) (e.g. probability maps, semantic segmentation) for the training images or run the classifier in [**batch mode**](https://www.ilastik.org/documentation/basics/batch) to process many images at once.
+Once the trained model works well with all the training images, you can either [**export the results**](https://www.ilastik.org/documentation/basics/export) (e.g. probability maps, semantic segmentation, ...) for the training images or run the classifier in [**batch mode**](https://www.ilastik.org/documentation/basics/batch) to process many images at once.
 
-Either way, the first step is to select what you want to export by choosing an option in the ***Source*** drop-down menu in the ***Prediction Export*** step (on the left side of the GUI). Let's for now select with ***Probabilities*** (probability maps).
+Either way, the first step is to select what you want to export by choosing an option in the ***Source*** drop-down menu in the ***Prediction Export*** step (on the left side of the GUI). Since in the next sections of the course we will use the **semantic segmentation** results, select ***Simple Segmentation***. This option will export the semantic segmentation of the nuclei in the images, where each pixel is classified as either **nuclei** or **background**.
 
 <div align="center"> <img class="custom-image" src="../../../_static/images/ilastik/5a.png" alt="Ilastik Logo" width="800"> </div>
 
-The second step is to select how we want to export the results. By clicking on the ***Choose Export Image Settings...*** button, a new window will open where you can select different options including the export format and the output folder where to save the result. Select "tif" as format and leave as default the output file path since it automatically is set to save the results in the same folder as the input images with the suffix appropriately changing depending on the option you select in the ***Source*** drop-down menu (e.g. *_Probabilities*).
+The second step is to select how we want to export the results. By clicking on the ***Choose Export Image Settings...*** button, a new window will open where you can select different options including the export format and the output folder where to save the result. Select "tif" as format and leave as default the output file path since it automatically is set to save the results in the same folder as the input images with the suffix appropriately changing depending on the option you select in the ***Source*** drop-down menu (e.g. *_Simple Segmentation*). Leave the other options untouched since we do not need to change them for this exercise.
 
 <div align="center"> <img class="custom-image" src="../../../_static/images/ilastik/5b.png" alt="Ilastik Logo" width="800"> </div>
 
-You can click ***Ok*** to close the window and then click on the ***Export All*** button to start exporting the predictions for all the training images. If you look in the folder where your training images are stored, you will find the exported results with the suffix *_Probabilities*.
-
-To continue the exercise we also need to export the **semantic segmentation** results. Therefore, go back to the ***Source*** drop-down menu and select ***Simple Segmentation*** (semantic). Then click on ***Export All*** again to export the semantic segmentation results for all the training images. The exported files will have the suffix *_Simple Segmentation*.
+You can click ***Ok*** to close the window and then click on the ***Export All*** button to start exporting the predictions for all the training images. If you look in the folder where your training images are stored, you will find the exported results with the suffix *_Simple Segmentation*.
 
 ### 6. Batch Processing
 
@@ -127,10 +125,10 @@ Since we will need to analyze more images for future sections of the course, we 
 <div align="center"> <img class="custom-image" src="../../../_static/images/ilastik/6b.png" alt="Ilastik Logo" width="800"> </div>
 
 By clicking on the ***Process all files*** button, the classifier will be run on all the images in the dataset.
-Depending on the option you select in the previous ***Prediction Export***, the results will be saved in the same folder as the input images with the suffix *_Probabilities* or *_Simple Segmentation*. **Make sure you run the classifier for both options to have all the results available for the next sections of the course**.
+Depending on the option you select in the previous ***Prediction Export***, the results will be saved in the same folder as the input images with the corresponding suffix, in our case *_Simple Segmentation*.
 
 ### 7. What's Next?
 
-From this **Ilastik** pipeline we managed to extract both the **probability maps** and the **semantic segmentation** of the nuclei in the images. In the next sections of the course, we will first use the **semantic segmentation** and [convert it into **instance segmentation**](./from_ilastik_masks_to_labels.ipynb) (as in the [classic segmentastion methods](../classic/classic.md) section). And then we will use the **probability maps** to train an **Ilastik** [**Object Classification** workflow](../../06_classification/object_classification_with_ilastik.md) to classify the nuclei into different classes based on their cell cycle stage.
+From this **Ilastik** pipeline we managed to extract the **semantic segmentation** of the nuclei in all the images. In the next sections of the course, we will first use the **semantic segmentation** and [convert it into **instance segmentation**](./from_ilastik_masks_to_labels.ipynb) (as in the [classic segmentastion methods](../classic/classic.md) section). And then we will use these labelled images to classify the nuclei into different classes based on their cell cycle stage using the **Ilastik** [**Object Classification** workflow](../../06_classification/object_classification_with_ilastik.md) .
 
 ***TODO: UPDATE LINK TO CLASSIC SEGMENTATION METHODS SECTION and OBJECT CLASSIFICATION SECTION ONCE THEY ARE READY***
