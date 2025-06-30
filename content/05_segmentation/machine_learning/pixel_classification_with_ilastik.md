@@ -133,6 +133,6 @@ Depending on the option you select in the previous ***Prediction Export***, the 
 
 ### 7. What's Next?
 
-From this **Ilastik** pipeline we managed to extract the **semantic segmentation** of the nuclei in all the images. In the next sections of the course, we will first use the **semantic segmentation** and [convert it into **instance segmentation**](./from_ilastik_masks_to_labels.ipynb) (as in the [classic segmentastion methods](../classic/classic.md) section). And then we will use these labelled images to classify the nuclei into different classes based on their cell cycle stage using the **Ilastik** [**Object Classification** workflow](../../06_classification/object_classification_with_ilastik.md) .
+From this **Ilastik** pipeline we managed to extract the **semantic segmentation** of the nuclei in all the images. In the next sections of the course, we will first use the **semantic segmentation** and [convert it into **instance segmentation**](./from_ilastik_masks_to_labels.ipynb) (as in the [classic segmentastion methods](../classic/classic.md) section). And then we will use these labelled images to classify the nuclei into different classes based on their cell cycle stage using the **Ilastik** [**Object Classification** workflow](../../06_classification/object_classification_with_ilastik.md).
 
 ***TODO: UPDATE LINK TO CLASSIC SEGMENTATION METHODS SECTION and OBJECT CLASSIFICATION SECTION ONCE THEY ARE READY***

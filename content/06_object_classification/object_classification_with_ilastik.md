@@ -122,3 +122,7 @@ To process many images at once, and **run the classifier on all the images in th
 <div align="center"> <img src="../../../_static/images/ilastik_obj_classification/7b.png" alt="Ilastik" width="800"> </div>
 
 By clicking on the ***Process all files*** button, the classifier will be run on all the images in the dataset and all the nuclei will be classified as *mitotic* or *non-mitotic*.
+
+### 7. What's Next?
+
+The output of this classifier is very similar to the one we obtained in the [Pixel Classification](../05_segmentation/machine_learning/pixel_classification_with_ilastik.md) section, but instead of pixel-wise predictions, we have object-wise predictions. In these images, each nucleus that has been classified as *mitotic* will have a value of 1, while each nucleus that has been classified as *non-mitotic* will have a value of 2. You could use this information to then analyze the cells also based on the cell cycle stage.
