@@ -4,3 +4,4 @@ tifffile
 scikit-image
 matplotlib
 pre-commit
+beautifulsoup4
