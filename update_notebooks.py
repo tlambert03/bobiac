@@ -1,7 +1,8 @@
 import nbformat
 import sys
+import re
 from pathlib import Path
-
+from update_styles_data import H2_STYLE, H3_STYLE, EXAMPLE_STYLE, EXERCISE_STYLE
 
 # When building the Jupyter Book, the links in the intro_to_python_II notebook
 # need to be updated when converting to a Jupyter Notebook or they will not work.
@@ -69,6 +70,37 @@ def update_notebooks(input_path: str | Path, output_path: str | Path) -> None:
             )
             for old_link, new_link in sorted_mappings:
                 cell.source = cell.source.replace(old_link, new_link)
+
+        # Apply styling to markdown headers
+        if cell.cell_type == "markdown":
+            content = cell.source
+            lines = content.split("\n")
+            modified = False
+
+            for i, line in enumerate(lines):
+                # Check for ## headers (apply TITLE_STYLE)
+                if match := re.match(r"^(##\s+)(.+)$", line):
+                    prefix, title = match[1], match[2]
+                    lines[i] = f'{prefix}<p style="{H2_STYLE}">{title}</p>'
+                    modified = True
+
+                elif match := re.match(r"^(###\s+)(.+)$", line):
+                    prefix, title = match[1], match[2]
+                    title_lower = title.lower()
+
+                    # Determine style based on content
+                    if "exercise" in title_lower:
+                        style = EXERCISE_STYLE
+                    elif "example" in title_lower:
+                        style = EXAMPLE_STYLE
+                    else:
+                        style = H3_STYLE
+
+                    lines[i] = f'{prefix}<p style="{style}">{title}</p>'
+                    modified = True
+
+            if modified:
+                cell.source = "\n".join(lines)
 
         cleaned_cells.append(cell)
 

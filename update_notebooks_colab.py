@@ -1,6 +1,8 @@
 import nbformat
 import sys
+import re
 from pathlib import Path
+from update_styles_data import H2_STYLE, H3_STYLE, EXAMPLE_STYLE, EXERCISE_STYLE
 
 
 def convert_to_colab_notebook(input_path: str | Path, output_path: str | Path) -> None:
@@ -54,6 +56,38 @@ def convert_to_colab_notebook(input_path: str | Path, output_path: str | Path) -
                 else:
                     updated_lines.append(line)
             cell.source = "\n".join(updated_lines)
+
+        # Apply styling to markdown headers
+        if cell.cell_type == "markdown":
+            content = cell.source
+            lines = content.split("\n")
+            modified = False
+
+            for i, line in enumerate(lines):
+                # Check for ## headers (apply TITLE_STYLE)
+                if match := re.match(r"^(##\s+)(.+)$", line):
+                    prefix, title = match[1], match[2]
+                    lines[i] = f'{prefix}<p style="{H2_STYLE}">{title}</p>'
+                    modified = True
+
+                elif match := re.match(r"^(###\s+)(.+)$", line):
+                    prefix, title = match[1], match[2]
+                    title = match[2]
+                    title_lower = title.lower()
+
+                    # Determine style based on content
+                    if "exercise" in title_lower:
+                        style = EXERCISE_STYLE
+                    elif "example" in title_lower:
+                        style = EXAMPLE_STYLE
+                    else:
+                        style = H3_STYLE
+
+                    lines[i] = f'{prefix}<p style="{style}">{title}</p>'
+                    modified = True
+
+            if modified:
+                cell.source = "\n".join(lines)
 
         new_cells.append(cell)
 
