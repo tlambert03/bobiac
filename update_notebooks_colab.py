@@ -1,6 +1,16 @@
 import nbformat
 import sys
+import re
 from pathlib import Path
+
+
+# Style definitions for headers
+TAG_TITLE = "style-title"
+TAG_EXAMPLE = "style-example"
+TAG_EXERCISE = "style-exercise"
+TITLE_STYLE = "color: black; background-color: rgb(116, 184, 104); padding: 3px; border-radius: 5px;"
+EXAMPLE_STYLE = "color: black; background-color: rgb(137, 206, 243); padding: 3px; border-radius: 5px;"
+EXERCISE_STYLE = "color: black; background-color: rgb(227, 137, 243); padding: 3px; border-radius: 5px;"
 
 
 def convert_to_colab_notebook(input_path: str | Path, output_path: str | Path) -> None:
@@ -54,6 +64,38 @@ def convert_to_colab_notebook(input_path: str | Path, output_path: str | Path) -
                 else:
                     updated_lines.append(line)
             cell.source = "\n".join(updated_lines)
+
+        # Apply styling to markdown headers
+        if cell.cell_type == "markdown":
+            content = cell.source
+            lines = content.split("\n")
+            modified = False
+
+            for i, line in enumerate(lines):
+                # Check for ## headers (apply TITLE_STYLE)
+                if match := re.match(r"^(##\s+)(.+)$", line):
+                    prefix, title = match[1], match[2]
+                    lines[i] = f'{prefix}<p style="{TITLE_STYLE}">{title}</p>'
+                    modified = True
+
+                elif match := re.match(r"^(###\s+)(.+)$", line):
+                    prefix, title = match[1], match[2]
+                    title = match[2]
+                    title_lower = title.lower()
+
+                    # Determine style based on content
+                    if "exercise" in title_lower:
+                        style = EXERCISE_STYLE
+                    elif "example" in title_lower:
+                        style = EXAMPLE_STYLE
+                    else:
+                        style = TITLE_STYLE
+
+                    lines[i] = f'{prefix}<p style="{style}">{title}</p>'
+                    modified = True
+
+            if modified:
+                cell.source = "\n".join(lines)
 
         new_cells.append(cell)
 
