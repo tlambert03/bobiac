@@ -2,15 +2,7 @@ import nbformat
 import sys
 import re
 from pathlib import Path
-
-
-# Style definitions for headers
-TAG_TITLE = "style-title"
-TAG_EXAMPLE = "style-example"
-TAG_EXERCISE = "style-exercise"
-TITLE_STYLE = "color: black; background-color: rgb(116, 184, 104); padding: 3px; border-radius: 5px;"
-EXAMPLE_STYLE = "color: black; background-color: rgb(137, 206, 243); padding: 3px; border-radius: 5px;"
-EXERCISE_STYLE = "color: black; background-color: rgb(227, 137, 243); padding: 3px; border-radius: 5px;"
+from update_styles_data import H2_STYLE, H3_STYLE, EXAMPLE_STYLE, EXERCISE_STYLE
 
 
 def convert_to_colab_notebook(input_path: str | Path, output_path: str | Path) -> None:
@@ -75,7 +67,7 @@ def convert_to_colab_notebook(input_path: str | Path, output_path: str | Path) -
                 # Check for ## headers (apply TITLE_STYLE)
                 if match := re.match(r"^(##\s+)(.+)$", line):
                     prefix, title = match[1], match[2]
-                    lines[i] = f'{prefix}<p style="{TITLE_STYLE}">{title}</p>'
+                    lines[i] = f'{prefix}<p style="{H2_STYLE}">{title}</p>'
                     modified = True
 
                 elif match := re.match(r"^(###\s+)(.+)$", line):
@@ -89,7 +81,7 @@ def convert_to_colab_notebook(input_path: str | Path, output_path: str | Path) -
                     elif "example" in title_lower:
                         style = EXAMPLE_STYLE
                     else:
-                        style = TITLE_STYLE
+                        style = H3_STYLE
 
                     lines[i] = f'{prefix}<p style="{style}">{title}</p>'
                     modified = True

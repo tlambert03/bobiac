@@ -1,10 +1,18 @@
 from pathlib import Path
 from bs4 import BeautifulSoup, Tag
 
-# Style definitions
-TITLE_STYLE = "color: black; background-color: rgb(116, 184, 104); padding: 3px; border-radius: 5px;"
-EXAMPLE_STYLE = "color: black; background-color: rgb(137, 206, 243); padding: 3px; border-radius: 5px;"
-EXERCISE_STYLE = "color: black; background-color: rgb(227, 137, 243); padding: 3px; border-radius: 5px;"
+from update_styles_data import H2_STYLE, H3_STYLE, EXAMPLE_STYLE, EXERCISE_STYLE
+
+# List of HTML files to exclude from styling (filename only, not full path)
+EXCLUDE_FROM_STYLING = [
+    # Add HTML filenames here to exclude them from header styling
+    "bioimage_analysis_intro.html",
+    "python_basics.html",
+    "digital_images_intro.html",
+    "object_classification.html",
+    "measurement_and_quantification_intro.html",
+    "reproducibility_and_image_ethics.html",
+]
 
 
 def apply_header_styles(html_content):
@@ -24,7 +32,7 @@ def apply_header_styles(html_content):
             # Remove any existing style attribute to avoid conflicts
             if "style" in h2.attrs:
                 del h2.attrs["style"]
-            h2.attrs["style"] = TITLE_STYLE
+            h2.attrs["style"] = H2_STYLE
             modified = True
             print(f"    ✅ Applied TITLE_STYLE to h2: {h2.get_text()[:50]}...")
 
@@ -44,8 +52,8 @@ def apply_header_styles(html_content):
                 h3.attrs["style"] = EXERCISE_STYLE
                 style_name = "EXERCISE_STYLE"
             else:
-                h3.attrs["style"] = TITLE_STYLE
-                style_name = "TITLE_STYLE"
+                h3.attrs["style"] = H3_STYLE
+                style_name = "H3_STYLE"
 
             modified = True
             print(f"    ✅ Applied {style_name} to h3: {h3.get_text()[:50]}...")
@@ -55,6 +63,10 @@ def apply_header_styles(html_content):
 
 def process_html_file(file_path):
     """Process a single HTML file and apply header styles."""
+    # Check if this file should be excluded from styling
+    if file_path.name in EXCLUDE_FROM_STYLING:
+        return
+
     try:
         with open(file_path, "r", encoding="utf-8") as f:
             content = f.read()
