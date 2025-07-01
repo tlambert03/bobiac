@@ -12,6 +12,9 @@ EXCLUDE_FROM_STYLING = [
     "object_classification.html",
     "measurement_and_quantification_intro.html",
     "reproducibility_and_image_ethics.html",
+    "python_for_digital_images.html",
+    "segmentation_intro.html",
+    "machine_learning_with_ilastik.html",
 ]
 
 
