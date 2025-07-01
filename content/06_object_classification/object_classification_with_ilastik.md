@@ -115,7 +115,7 @@ Click on the ***Export All*** button to start exporting the object predictions f
 
 ### 6. Batch Processing
 
-To process many images at once, and **run the classifier on all the images in the dataset** you can select the ***Batch Processing*** step (on the left side of the GUI) and simply *Drag and drop* all the files in the dataset folder on the white area of the GUI. Remember to load the *raw data* in the ***Raw Data*** tab and the corresponding *instance segmentation* images in the ***Segmentation Image*** tab (it is important that the **order of the images in both tabs matches**).
+To process many images at once and **run the classifier on all the images in the dataset** you can select the ***Batch Processing*** step (on the left side of the GUI) and simply *Drag and drop* all the files in the dataset folder on the white area of the GUI. Remember to load the *raw data* in the ***Raw Data*** tab and the corresponding *instance segmentation* images in the ***Segmentation Image*** tab (it is important that the **order of the images in both tabs matches**).
 
 <div align="center"> <img src="../../_static/images/ilastik_obj_classification/7a.png" alt="Ilastik" width="800"> </div>
 
