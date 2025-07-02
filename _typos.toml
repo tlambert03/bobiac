@@ -12,6 +12,7 @@
 "nd" = "nd"    # Ignore "nd" when used in technical contexts
 
 "ba" = "ba"
+"thr" = "thr"
 
 [files]
 # You can also exclude specific files or patterns if needed
