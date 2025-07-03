@@ -14,7 +14,7 @@ During the course we will explore different approaches to semantic and instance 
 
 ***TODO: UPDATE LINK TO SECTIONS***
 
-***TODO: ADD CLASSIC, ML and DL DIAGRAM***
+<div align="center"> <img src="../../_static/images/seg_methods.png" alt="Ilastik Logo" width="700"> </div>
 
 ## Table of Contents
 
