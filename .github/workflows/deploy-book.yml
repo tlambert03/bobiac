@@ -16,9 +16,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Set up Python
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      # Set up Python and uv
+      - name: Set up Python and uv
+        uses: astral-sh/setup-uv@v4
+        with:
+          python-version: "3.12"
 
       # Install OpenGL + virtual display support. This is needed to visualize
       # glfw, vispy, or napari-based notebooks without errors.
@@ -35,17 +37,15 @@ jobs:
           export DISPLAY=:99
           glxinfo | grep "OpenGL version"
 
-      # Install Python dependencies
+      # Install Python dependencies with uv
       - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+        run: uv sync
 
       # Build the book
       - name: Build the book
         run: |
           chmod +x ./build.sh
-          ./build.sh
+          uv run ./build.sh
           touch ./_build/.nojekyll
 
       # Deploy the book
