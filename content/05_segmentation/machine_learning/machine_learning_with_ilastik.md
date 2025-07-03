@@ -8,7 +8,11 @@
 
 At its core, **Ilastik** employs supervised machine learning techniques. **Users annotate images by labeling regions of interest**, and the software **trains a classifier** (typically a [Random Forest algorithm](https://en.wikipedia.org/wiki/Random_forest)) **to recognize patterns and distinguish between different classes within the images**.
 
-***TODO: ADD ML DIAGRAM***
+<div align="center">
+    <img src="../../../_static/images/ilastik_obj_classification/seg_methods_ml.png" alt="Ilastik Logo" width="700">
+</div>
+
+<br>
 
 The software is well-documented, with comprehensive resources available [here](https://www.ilastik.org/documentation/).
 
