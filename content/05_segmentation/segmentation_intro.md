@@ -6,7 +6,7 @@ There are two primary types of segmentation approaches: **semantic segmentation*
 
 **Semantic segmentation** classifies each pixel in an image into predefined categories (e.g., background, nuclei, cytoplasm), treating all objects of the same class as a single entity without distinguishing between individual instances.
 
-In contrast, **instance segmentation** goes a step further by not only classifying pixels but also **distinguishing between separate objects** of the same class, providing unique labels for each individual object (e.g., identifying cell #1, cell #2, etc.).
+In contrast, **instance segmentation** goes a step further by not only classifying pixels but also **distinguishing between separate objects** of the same class, providing unique labels for each individual object (e.g., identifying nucleus #1, nucleus #2, etc.).
 
 <div align="center"> <img src="../../_static/images/seg.png" alt="Ilastik Logo" width="700"> </div><br>
 
@@ -14,7 +14,7 @@ During the course we will explore different approaches to semantic and instance 
 
 ***TODO: UPDATE LINK TO SECTIONS***
 
-***TODO: ADD CLASSIC, ML and DL DIAGRAM***
+<div align="center"> <img src="../../_static/images/seg_methods.png" alt="Ilastik Logo" width="700"> </div>
 
 ## Table of Contents
 
