@@ -1,4 +1,4 @@
-# <strong>05</strong> - <i class="fa-solid fa-disease"></i> Semantic & Instance Segmentation
+# 05 - <i class="fa-solid fa-disease"></i> Semantic & Instance Segmentation
 
 **Segmentation** is a fundamental image analysis technique in bioimage analysis that involves **partitioning an image into distinct regions or objects** based on specific criteria such as intensity, color, texture, or morphological features. This process is essential for quantitative analysis of biological structures, enabling researchers to measure, count, and characterize individual cells, organelles, or other biological entities within complex images.
 

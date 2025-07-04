@@ -62,6 +62,8 @@ select = [
 ]
 ignore = [
     "E501", # line too long, handled by black
+    "UP003",  # type-of-primitive (for python basic notebook)
+    "B033"  # duplicate-value (for python basics notebook)
 ]
 
 [tool.black]
@@ -70,9 +72,10 @@ target-version = ["py39"]
 
 [tool.typos.default.extend-words]
 # Library names that should not be corrected
-"nd2" = "nd2"  # Ignore nd2 library name (don't convert to "and2")
-"nd" = "nd"    # Ignore "nd" when used in technical contexts
+"nd2" = "nd2"
+"nd" = "nd"
 "ba" = "ba"
+"thr" = "thr"
 
 [tool.typos.files]
 # You can also exclude specific files or patterns if needed
