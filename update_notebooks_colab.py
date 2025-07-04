@@ -1,8 +1,10 @@
-import nbformat
-import sys
 import re
+import sys
 from pathlib import Path
-from update_styles_data import H2_STYLE, H3_STYLE, EXAMPLE_STYLE, EXERCISE_STYLE
+
+import nbformat
+
+from update_styles_data import EXAMPLE_STYLE, EXERCISE_STYLE, H2_STYLE, H3_STYLE
 
 
 def convert_to_colab_notebook(input_path: str | Path, output_path: str | Path) -> None:
