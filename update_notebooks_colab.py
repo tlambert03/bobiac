@@ -47,6 +47,9 @@ def convert_to_colab_notebook(input_path: str | Path, output_path: str | Path) -
                 cell.source = "\n".join(install_commands)
                 if not use_ndv and "ndv" in cell.source:
                     use_ndv = True
+                    # Ensure matplotlib is included when ndv is present
+                    if "matplotlib" not in cell.source:
+                        cell.source += "\n%pip install matplotlib"
 
         # comment out any cell that uses ndv
         if cell.cell_type == "code" and "ndv" in cell.source:
@@ -125,10 +128,6 @@ def _create_pip_install_dependencies_cell(cell: nbformat.NotebookNode) -> list[s
                 break
             if line.startswith("#") and '"' in line:
                 deps.append(line.split('"')[1])
-
-    # Ensure matplotlib is included
-    if "matplotlib" not in [d.strip('"') for d in deps]:
-        deps.append("matplotlib")
 
     # Generate pip install commands (quoted if extras used)
     for dep in deps:
