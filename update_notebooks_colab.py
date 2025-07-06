@@ -62,20 +62,50 @@ def convert_to_colab_notebook(input_path: str | Path, output_path: str | Path) -
                     updated_lines.append(line)
             cell.source = "\n".join(updated_lines)
 
-        # Apply styling to markdown headers
-        if cell.cell_type == "markdown":
+        # Apply styling to markdown headers and replace internal links
+        if cell.cell_type in ["markdown", "code"]:
             content = cell.source
             lines = content.split("\n")
             modified = False
 
             for i, line in enumerate(lines):
-                # Check for ## headers (apply TITLE_STYLE)
-                if match := re.match(r"^(##\s+)(.+)$", line):
+                # Replace internal links with online GitHub raw URLs
+                # (only for _static/ paths)
+                if "../" in line and "_static/" in line:
+                    # Simple string replacement for any path starting with ../ and
+                    # containing _static/ - now handles spaces in filenames
+                    def replace_path(match):
+                        path = match.group(1)
+                        # URL encode spaces in the path
+                        encoded_path = path.replace(" ", "%20")
+                        return f"https://raw.githubusercontent.com/HMS-IAC/bobiac/main/{encoded_path}"
+
+                    updated_line = re.sub(
+                        r'(\.\./.*?_static/[^"\')\]]*)',
+                        replace_path,
+                        line,
+                    )
+                    # Clean up any ../ at the beginning of the GitHub URL
+                    updated_line = re.sub(
+                        r"https://raw\.githubusercontent\.com/HMS-IAC/bobiac/main/(\.\./)*",
+                        "https://raw.githubusercontent.com/HMS-IAC/bobiac/main/",
+                        updated_line,
+                    )
+                    if updated_line != line:
+                        lines[i] = updated_line
+                        modified = True
+
+                # Check for ## headers (apply TITLE_STYLE) - only for markdown cells
+                if cell.cell_type == "markdown" and (
+                    match := re.match(r"^(##\s+)(.+)$", line)
+                ):
                     prefix, title = match[1], match[2]
                     lines[i] = f'{prefix}<p style="{H2_STYLE}">{title}</p>'
                     modified = True
 
-                elif match := re.match(r"^(###\s+)(.+)$", line):
+                elif cell.cell_type == "markdown" and (
+                    match := re.match(r"^(###\s+)(.+)$", line)
+                ):
                     prefix, title = match[1], match[2]
                     title = match[2]
                     title_lower = title.lower()
