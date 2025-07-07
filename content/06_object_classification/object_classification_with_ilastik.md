@@ -29,7 +29,7 @@ For this exercise, we will use the *Instance Segmentation* images that we genera
 
 Select the ***Object Classification [Inputs: Raw Data, Segmentation]*** workflow by clicking on it. You will be automatically brought to the **Input Data** step.
 
-<div align="center"> <img src="../../../_static/images/ilastik_obj_classification/1a.png" alt="Ilastik" width="800"> </div>
+<div align="center"> <img src="../../_static/images/ilastik_obj_classification/1a.png" alt="Ilastik" width="800"> </div>
 
 <div class="alert alert-info">
     <strong>NOTE:</strong> Remember to save your project regularly using <strong>Cmd+S</strong> (macOS) or <strong>Ctrl+S</strong> (Windows), or via <strong>Project → Save Project</strong>.
@@ -42,7 +42,7 @@ The data loading step is similar to the one in the [Pixel Classification](../05_
 It is important that the **order of the images in both tabs matches**, as Ilastik will use the *instance segmentation* images to identify and classify the objects in the corresponding *raw data* images.
 By clicking on the ***Summary*** tab, you can verify that the images are correctly paired.
 
-<div align="center"> <img src="../../../_static/images/ilastik_obj_classification/2a.png" alt="Ilastik" width="800"> </div>
+<div align="center"> <img src="../../_static/images/ilastik_obj_classification/2a.png" alt="Ilastik" width="800"> </div>
 
 ### 3. Select the Features
 
@@ -52,7 +52,7 @@ To continue, click on the ***Object Feature Selection*** step (on the left side 
     <strong>NOTE:</strong> Once selected, all the features are immediately computed at once for all the images loaded. Therefore, Ilastik suggest to select all features you think will be needed for the training at this step (you will be able to change the selection also in the next step if needed).
 </div>
 
-<div align="center"> <img src="../../../_static/images/ilastik_obj_classification/3a.png" alt="Ilastik" width="800"> </div>
+<div align="center"> <img src="../../_static/images/ilastik_obj_classification/3a.png" alt="Ilastik" width="800"> </div>
 
 The goal of this exercise is to classify cells in *mitotic* vs *non-mitotic* states. By looking at the raw images, try to think about which features might be useful for this classification and select them accordingly. For example, you might want to select features related to the *shape*, *intensity*, and *texture*. By hovering over each feature, you can see a brief description of what it measures.
 
@@ -77,11 +77,11 @@ Next repeat the process for the ***non-mitotic*** class, selecting some objects 
         <li>To control brightness and contrast, <em>right-click</em> on <strong><em>Raw Input</em></strong> in the <strong><em>Group Visibility</em></strong> section (bottom left) and select <strong><em>Adjust thresholds</em></strong> to set the minimum and maximum display range.</li>
     </ul>
     <div align="center">
-        <img src="../../../_static/images/ilastik/range.png" alt="Ilastik" width="650">
+        <img src="../../_static/images/ilastik/range.png" alt="Ilastik" width="650">
     </div>
 </div>
 
-<div align="center"> <img src="../../../_static/images/ilastik_obj_classification/4a.png" alt="Ilastik" width="800"> </div>
+<div align="center"> <img src="../../_static/images/ilastik_obj_classification/4a.png" alt="Ilastik" width="800"> </div>
 
 To train the classifier and see the predictions, press the ***Live Update*** button. This will update the predictions in real-time as you label more pixels.
 
@@ -99,27 +99,27 @@ Once the trained model works well with all the training images, you can either [
 
 Either way, the first step is to select what you want to export by choosing an option in the ***Source*** drop-down menu in the ***Export Settings*** step (on the left side of the GUI). Different options are available but for this exercise, we want to export the **Object Predictions**. This will export new images where each object is assigned a value depending on the class it belongs to. In our case all the objects in the *mitotic* class will be assigned a value of 1, while all the objects in the *non-mitotic* class will be assigned a value of 2 (because class 1 was assigned to *mitotic* and class 2 to *non-mitotic*).
 
-<div align="center"> <img src="../../../_static/images/ilastik_obj_classification/5a.png" alt="Ilastik" width="800"> </div>
+<div align="center"> <img src="../../_static/images/ilastik_obj_classification/5a.png" alt="Ilastik" width="800"> </div>
 
 The second step is to select how we want to export the results. By clicking on the ***Choose Export Image Settings...*** button, a new window will open where you can select different options including the export format and the output folder where to save the result. Select "tif" as format and leave as default the output file path since it automatically is set to save the results in the same folder as the input images with the suffix appropriately changing depending on the option you select in the ***Source*** drop-down menu (e.g. *_Object Predictions*). Leave the other options untouched since we do not need to change them for this exercise.
 
-<div align="center"> <img src="../../../_static/images/ilastik_obj_classification/5b.png" alt="Ilastik" width="800"> </div>
+<div align="center"> <img src="../../_static/images/ilastik_obj_classification/5b.png" alt="Ilastik" width="800"> </div>
 
 The third step is to select which features to include in the exported data table. This table will contain detailed measurements and feature values for each classified object. To do so, click on the ***Choose Feature Table Export*** button. A new window will open where you can select where to save the table and which features to include. For this exercise, we will focus on the image outputs, but you can optionally export specific features if you want to explore the quantitative data.
 
-<div align="center"> <img src="../../../_static/images/ilastik_obj_classification/5c.png" alt="Ilastik" width="800"> </div>
+<div align="center"> <img src="../../_static/images/ilastik_obj_classification/5c.png" alt="Ilastik" width="800"> </div>
 
 Click on the ***Export All*** button to start exporting the object predictions for all the training images. If you look in the folder where your training images are stored, you will find the exported results with the suffix *_Object Predictions.tif*. In the folder where you had the instance segmentation images, you will find the generated table.
 
-<div align="center"> <img src="../../../_static/images/ilastik_obj_classification/8a.png" alt="Ilastik" width="700"> </div>
+<div align="center"> <img src="../../_static/images/ilastik_obj_classification/8a.png" alt="Ilastik" width="700"> </div>
 
 ### 6. Batch Processing
 
-To process many images at once, and **run the classifier on all the images in the dataset** you can select the ***Batch Processing*** step (on the left side of the GUI) and simply *Drag and drop* all the files in the dataset folder on the white area of the GUI. Remember to load the *raw data* in the ***Raw Data*** tab and the corresponding *instance segmentation* images in the ***Segmentation Image*** tab (it is important that the **order of the images in both tabs matches**).
+To process many images at once and **run the classifier on all the images in the dataset** you can select the ***Batch Processing*** step (on the left side of the GUI) and simply *Drag and drop* all the files in the dataset folder on the white area of the GUI. Remember to load the *raw data* in the ***Raw Data*** tab and the corresponding *instance segmentation* images in the ***Segmentation Image*** tab (it is important that the **order of the images in both tabs matches**).
 
-<div align="center"> <img src="../../../_static/images/ilastik_obj_classification/7a.png" alt="Ilastik" width="800"> </div>
+<div align="center"> <img src="../../_static/images/ilastik_obj_classification/7a.png" alt="Ilastik" width="800"> </div>
 
-<div align="center"> <img src="../../../_static/images/ilastik_obj_classification/7b.png" alt="Ilastik" width="800"> </div>
+<div align="center"> <img src="../../_static/images/ilastik_obj_classification/7b.png" alt="Ilastik" width="800"> </div>
 
 By clicking on the ***Process all files*** button, the classifier will be run on all the images in the dataset and all the nuclei will be classified as *mitotic* or *non-mitotic*.
 

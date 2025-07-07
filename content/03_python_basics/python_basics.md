@@ -1,4 +1,4 @@
-# <strong>03</strong> - <i class="fab fa-python"></i> The Python Basics
+# 03 - <i class="fab fa-python"></i> The Python Basics
 
 ## Something
 

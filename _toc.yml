@@ -14,7 +14,7 @@ parts:
 
   - file: content/03_python_basics/python_basics.md
     sections:
-      - file: content/03_python_basics/intro_to_python_II
+      - file: content/03_python_basics/python_basics_notebook
 
   - file: content/04_digital_images_intro/digital_images_intro.md
     sections:
@@ -43,8 +43,8 @@ parts:
 
   - file: content/08_colocalization/colocalization_intro.md
     sections:
-      - file: content/08_colocalization/object_based_colocalization.md
-      - file: content/08_colocalization/pixel_intensity_based_colocalization.md
+      - file: content/08_colocalization/pixel_intensity_based_colocalization_pearsons
+      - file: content/08_colocalization/pixel_intensity_based_colocalization_manders
 
   - file: content/09_reproducibility_and_image_ethics/reproducibility_and_image_ethics.md
 

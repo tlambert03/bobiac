@@ -1,7 +1,8 @@
 from pathlib import Path
+
 from bs4 import BeautifulSoup, Tag
 
-from update_styles_data import H2_STYLE, H3_STYLE, EXAMPLE_STYLE, EXERCISE_STYLE
+from update_styles_data import EXAMPLE_STYLE, EXERCISE_STYLE, H2_STYLE, H3_STYLE
 
 # List of HTML files to exclude from styling (filename only, not full path)
 EXCLUDE_FROM_STYLING = [
@@ -12,6 +13,9 @@ EXCLUDE_FROM_STYLING = [
     "object_classification.html",
     "measurement_and_quantification_intro.html",
     "reproducibility_and_image_ethics.html",
+    "python_for_digital_images.html",
+    "segmentation_intro.html",
+    "machine_learning_with_ilastik.html",
 ]
 
 
@@ -68,7 +72,7 @@ def process_html_file(file_path):
         return
 
     try:
-        with open(file_path, "r", encoding="utf-8") as f:
+        with open(file_path, encoding="utf-8") as f:
             content = f.read()
 
         modified_content, was_modified = apply_header_styles(content)

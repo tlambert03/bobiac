@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Check if OpenGL is available
 echo "🔍 Verifying OpenGL setup..."
 if ! glxinfo | grep -q "OpenGL version"; then
