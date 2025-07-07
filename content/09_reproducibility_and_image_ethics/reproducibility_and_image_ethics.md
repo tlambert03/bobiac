@@ -1,1 +1,1 @@
-# <strong>09</strong> - <i class="fa-solid fa-rotate-right"></i> Reproducibility and Image Ethics
+# 09 - <i class="fa-solid fa-rotate-right"></i> Reproducibility and Image Ethics

@@ -1,1 +1,1 @@
-# <strong>04</strong> - <i class="fas fa-table-cells"></i> Introduction to Digital Images
+# 04 - <i class="fas fa-table-cells"></i> Introduction to Digital Images

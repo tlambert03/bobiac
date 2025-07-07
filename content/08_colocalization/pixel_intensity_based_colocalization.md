@@ -1,1 +1,0 @@
-# Pixel Intensity-Based Colocalization

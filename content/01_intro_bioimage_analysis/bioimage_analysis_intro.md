@@ -1,4 +1,4 @@
-# <strong>01</strong> - <i class="fas fa-image"></i> Introduction to Bioimage Analysis
+# 01 - <i class="fas fa-image"></i> Introduction to Bioimage Analysis
 
 ## Something
 
