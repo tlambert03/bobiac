@@ -1,6 +1,31 @@
-import nbformat
+import re
 import sys
 from pathlib import Path
+
+import nbformat
+
+from update_styles_data import EXAMPLE_STYLE, EXERCISE_STYLE, H2_STYLE, H3_STYLE
+
+HTML_TYPE = "mark"
+
+# When building the Jupyter Book, the links in the python_basics notebook
+# need to be updated when converting to a Jupyter Notebook or they will not work.
+# This is a mapping of the links in the book to the links that should be updated
+# in the notebook.
+map_03_python_basics_book_to_notebook = {
+    "#commenting-printing": "#0.-Commenting-&-Printing",
+    "#data-types": "#1.-Data-Types",
+    "#variables": "#2.-Variables",
+    "#operators": "#3.-Operators",
+    "#data-structures": "#4.-Data-Structures",
+    "#data-structures-lists": "#5.-Data-Structures:-Lists",
+    "#data-structures-tuples": "#6.-Data-Structures:-Tuples",
+    "#data-structures-dictionaries": "#7.-Data-Structures:-Dictionaries",
+    "#data-structures-sets": "#8.-Data-Structures:-Sets",
+    "#for-loops": "#9.-For-Loops",
+    "#if-statements": "#10.-If-Statements",
+    "#functions": "#11.-Functions",
+}
 
 
 def update_notebooks(input_path: str | Path, output_path: str | Path) -> None:
@@ -34,6 +59,56 @@ def update_notebooks(input_path: str | Path, output_path: str | Path) -> None:
         if "skip-execution" in tags:
             tags.remove("skip-execution")
             cell["metadata"]["tags"] = tags
+
+        # Replace links in python_basics_notebook.ipynb
+        if (
+            Path(input_path).name == "python_basics_notebook.ipynb"
+            and cell.cell_type == "markdown"
+        ):
+            # Sort by length (descending) to process longer patterns first
+            # This prevents partial matches from breaking longer patterns
+            sorted_mappings = sorted(
+                map_03_python_basics_book_to_notebook.items(),
+                key=lambda x: len(x[0]),
+                reverse=True,
+            )
+            for old_link, new_link in sorted_mappings:
+                cell.source = cell.source.replace(old_link, new_link)
+
+        # Apply styling to markdown headers
+        if cell.cell_type == "markdown":
+            content = cell.source
+            lines = content.split("\n")
+            modified = False
+
+            for i, line in enumerate(lines):
+                # Check for ## headers
+                if match := re.match(r"^(##\s+)(.+)$", line):
+                    prefix, title = match[1], match[2]
+                    lines[i] = (
+                        f'{prefix}<{HTML_TYPE} style="{H2_STYLE}">{title}</{HTML_TYPE}>'
+                    )
+                    modified = True
+                # Check for ### headers
+                elif match := re.match(r"^(###\s+)(.+)$", line):
+                    prefix, title = match[1], match[2]
+                    title_lower = title.lower()
+
+                    # Determine style based on content
+                    if "exercise" in title_lower:
+                        style = EXERCISE_STYLE
+                    elif "example" in title_lower:
+                        style = EXAMPLE_STYLE
+                    else:
+                        style = H3_STYLE
+
+                    lines[i] = (
+                        f'{prefix}<{HTML_TYPE} style="{style}">{title}</{HTML_TYPE}>'
+                    )
+                    modified = True
+
+            if modified:
+                cell.source = "\n".join(lines)
 
         cleaned_cells.append(cell)
 

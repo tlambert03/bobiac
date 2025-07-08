@@ -1,6 +1,8 @@
-import nbformat
+import re
 import sys
 from pathlib import Path
+
+import nbformat
 
 
 def convert_to_colab_notebook(input_path: str | Path, output_path: str | Path) -> None:
@@ -43,6 +45,9 @@ def convert_to_colab_notebook(input_path: str | Path, output_path: str | Path) -
                 cell.source = "\n".join(install_commands)
                 if not use_ndv and "ndv" in cell.source:
                     use_ndv = True
+                    # Ensure matplotlib is included when ndv is present
+                    if "matplotlib" not in cell.source:
+                        cell.source += "\n%pip install matplotlib"
 
         # comment out any cell that uses ndv
         if cell.cell_type == "code" and "ndv" in cell.source:
@@ -54,6 +59,42 @@ def convert_to_colab_notebook(input_path: str | Path, output_path: str | Path) -
                 else:
                     updated_lines.append(line)
             cell.source = "\n".join(updated_lines)
+
+        # Apply styling to markdown headers and replace internal links
+        if cell.cell_type in ["markdown", "code"]:
+            content = cell.source
+            lines = content.split("\n")
+            modified = False
+
+            for i, line in enumerate(lines):
+                # Replace internal links with online GitHub raw URLs
+                # (only for _static/ paths)
+                if "../" in line and "_static/" in line:
+                    # Simple string replacement for any path starting with ../ and
+                    # containing _static/ - now handles spaces in filenames
+                    def replace_path(match):
+                        path = match.group(1)
+                        # URL encode spaces in the path
+                        encoded_path = path.replace(" ", "%20")
+                        return f"https://raw.githubusercontent.com/HMS-IAC/bobiac/main/{encoded_path}"
+
+                    updated_line = re.sub(
+                        r'(\.\./.*?_static/[^"\')\]]*)',
+                        replace_path,
+                        line,
+                    )
+                    # Clean up any ../ at the beginning of the GitHub URL
+                    updated_line = re.sub(
+                        r"https://raw\.githubusercontent\.com/HMS-IAC/bobiac/main/(\.\./)*",
+                        "https://raw.githubusercontent.com/HMS-IAC/bobiac/main/",
+                        updated_line,
+                    )
+                    if updated_line != line:
+                        lines[i] = updated_line
+                        modified = True
+
+            if modified:
+                cell.source = "\n".join(lines)
 
         new_cells.append(cell)
 
@@ -89,10 +130,6 @@ def _create_pip_install_dependencies_cell(cell: nbformat.NotebookNode) -> list[s
                 break
             if line.startswith("#") and '"' in line:
                 deps.append(line.split('"')[1])
-
-    # Ensure matplotlib is included
-    if "matplotlib" not in [d.strip('"') for d in deps]:
-        deps.append("matplotlib")
 
     # Generate pip install commands (quoted if extras used)
     for dep in deps:

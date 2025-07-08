@@ -11,9 +11,6 @@ parts:
   - file: content/01_intro_bioimage_analysis/bioimage_analysis_intro.md
 
   - file: content/02_getting_started_with_python/getting_started_with_python.md
-    sections:
-      - file: content/02_getting_started_with_python/file1.md
-      - file: content/02_getting_started_with_python/file2.md
 
   - file: content/03_python_basics/python_basics.md
     sections:
@@ -40,16 +37,18 @@ parts:
           - file: content/05_segmentation/deep_learning/cellpose_code.md
           - file: content/05_segmentation/deep_learning/cellpose_retraining.md
 
-  - file: content/06_classification/classification.md
+  - file: content/06_object_classification/object_classification.md
     sections:
-      - file: content/06_classification/object_classification_with_ilastik.md
+    - file: content/06_object_classification/object_classification_with_ilastik.md
 
   - file: content/07_measurement_and_quantification/measurement_and_quantification_intro.md
+    sections:
+      - file: content/07_measurement_and_quantification/measurement_and_quantification_notebook
 
   - file: content/08_colocalization/colocalization_intro.md
     sections:
-      - file: content/08_colocalization/object_based_colocalization.md
-      - file: content/08_colocalization/pixel_intensity_based_colocalization.md
+      - file: content/08_colocalization/pixel_intensity_based_colocalization_pearsons
+      - file: content/08_colocalization/pixel_intensity_based_colocalization_manders
 
   - file: content/09_reproducibility_and_image_ethics/reproducibility_and_image_ethics.md
 

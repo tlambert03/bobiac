@@ -3,12 +3,16 @@
 [**Ilastik**](https://www.ilastik.org) is a **free**, **open-source** software tool designed for **interactive image analysis**, including tasks such as **segmentation** and **classification** on multi-dimensional datasets (e.g. 2D, 3D), without requiring prior expertise in machine learning or programming.
 
 <div align="center">
-    <img class="custom-image" src="../../../_static/images/ilastik/ilastik_startup.png" alt="Ilastik Logo" width="700">
+    <img src="../../../_static/images/ilastik/ilastik_startup.png" alt="Ilastik Logo" width="700">
 </div>
 
 At its core, **Ilastik** employs supervised machine learning techniques. **Users annotate images by labeling regions of interest**, and the software **trains a classifier** (typically a [Random Forest algorithm](https://en.wikipedia.org/wiki/Random_forest)) **to recognize patterns and distinguish between different classes within the images**.
 
-***TODO: ADD ML DIAGRAM***
+<div align="center">
+    <img src="../../../_static/images/ilastik_obj_classification/seg_methods_ml.png" alt="Ilastik Logo" width="700">
+</div>
+
+<br>
 
 The software is well-documented, with comprehensive resources available [here](https://www.ilastik.org/documentation/).
 

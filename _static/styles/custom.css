@@ -84,9 +84,6 @@ html[data-theme="dark"] .logo-dark {
   margin-bottom: 0.5em;
 }
 
-.custom-title {
-  background-color: var(--bobiac-green);
-  border-radius: 6px;
-  padding: 0.2em;
-  color: #ffffff;
+.image-border {
+  border: 2px solid black;
 }
