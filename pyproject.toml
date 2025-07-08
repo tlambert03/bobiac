@@ -36,6 +36,7 @@ dependencies = [
     "imagecodecs",
     "pre-commit",
     "tqdm",
+    "pandas"
 ]
 
 [tool.hatch.build.targets.wheel]
