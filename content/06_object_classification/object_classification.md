@@ -10,4 +10,4 @@ To implement object classification, **you need both the original image and its c
 
 <br>
 
-In this section, similarly to what we did for [**Pixel Classification**](../05_segmentation/machine_learning/machine_learning_with_ilastik.md), we will use the open-source software [**Ilastik**](https://www.ilastik.org) to perform [**Object Classification**](https://www.ilastik.org/documentation/objects/objects) using **Machine Learning**. In this case, instead of classifying individual pixels, we will **classify entire objects** based on their extracted features.
+In this section, similarly to what we did for [**Pixel Classification**](../05_segmentation/machine_learning/intro_to_ilastik.md), we will use the open-source software [**Ilastik**](https://www.ilastik.org) to perform [**Object Classification**](https://www.ilastik.org/documentation/objects/objects) using **Machine Learning**. In this case, instead of classifying individual pixels, we will **classify entire objects** based on their extracted features.

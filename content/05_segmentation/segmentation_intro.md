@@ -10,7 +10,7 @@ In contrast, **instance segmentation** goes a step further by not only classifyi
 
 <div align="center"> <img src="../../_static/images/seg.png" alt="Ilastik Logo" width="700"> </div><br>
 
-During the course we will explore different approaches to semantic and instance segmentation. We will first follow a [**classical approach**](./classic/classic.md) based on *filtering* and *thresholding*, then we will explore [**machine learning** methods using the **Ilastik**](./machine_learning/machine_learning_with_ilastik.md) open-source software, and finally we will delve into [**deep learning** methods using **Cellpose**](./deep_learning/deep_learning_with_cellpose.md).
+During the course we will explore different approaches to semantic and instance segmentation. We will first follow a [**classical approach**](./classic/classic.md) based on *filtering* and *thresholding*, then we will explore [**machine learning** methods using the **Ilastik**](./machine_learning/intro_to_ilastik.md) open-source software, and finally we will delve into [**deep learning** methods using **Cellpose**](./deep_learning/deep_learning_with_cellpose.md).
 
 ***TODO: UPDATE LINK TO SECTIONS***
 
@@ -19,5 +19,5 @@ During the course we will explore different approaches to semantic and instance 
 ## Table of Contents
 
 - [Classical Segmentation](./classic/classic.md)
-- [Machine Learning: Ilastik](./machine_learning/machine_learning_with_ilastik.md)
+- [Machine Learning: Ilastik](./machine_learning/intro_to_ilastik.md)
 - [Deep Learning: Cellpose](./deep_learning/deep_learning_with_cellpose.md)
