@@ -1,11 +1,12 @@
-# 07 - <i class="fa-solid fa-chart-simple"></i> Measurement & Quantification using Python
+# 07 - <i class="fa-solid fa-chart-simple"></i> Measurement & Quantification
 
 In this section, we will learn how to use Python to measure and quantify data from images, meaning how to go from images to numbers to plots. This process is often referred to as feature extraction. Feature extraction is the process of computing quantitative descriptors from image data that help capture relevant patterns, structures, or biological signals. In the context of microscopy, these features represent properties of cells, tissues, organelles, or other biological structures. Feature extraction bridges raw image data with biological insight, enabling classification, clustering, and statistical analysis.
 
 There are three broad types of features typically extracted:
-- Intensity features: Related to the pixel brightness distribution.
-- Morphological features: Describe shape and size.
-- Spatial features: Capture location and relationship between structures.measurements-illustration.png
+
+- **Intensity features**: Related to the pixel brightness distribution.
+- **Morphological features**: Describe shape and size.
+- **Spatial features**: Capture location and relationship between structures.
 
 <div align="center">
     <img src="../../_static/images/quant/measurements-illustration.png" alt="Measurements Illustration" width="600">
@@ -21,7 +22,6 @@ Intensity features summarize the distribution of grayscale or fluorescence value
 - **Histogram**: Distribution of intensity values.
 - **Fluorescence intensity**: Sum of all pixel intensities in the object.
 - **Fluorescence intensity ratio**: Ratio of two different channels.
-
 
 ## Morphological Features
 
