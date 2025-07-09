@@ -1,4 +1,4 @@
-# Classic Methods
+# Classical Methods
 
 Description...
 
