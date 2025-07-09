@@ -37,6 +37,8 @@ dependencies = [
     "pre-commit",
     "tqdm",
     "pandas",
+    "bioio",
+    "rich",
 ]
 
 [tool.hatch.build.targets.wheel]
