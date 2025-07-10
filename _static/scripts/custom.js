@@ -54,8 +54,15 @@ async function downloadScript() {
         return;
     }
     
-    // Create a zip file containing all data files
-    const JSZip = window.JSZip || await import('https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js').then(m => m.default);
+    // Load JSZip library
+    let JSZip;
+    if (window.JSZip) {
+        JSZip = window.JSZip;
+    } else {
+        const module = await import('https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js');
+        JSZip = module.default || module.JSZip || window.JSZip;
+    }
+    
     const zip = new JSZip();
     const dataFolder = zip.folder("bobiac_data");
     
@@ -75,6 +82,81 @@ async function downloadScript() {
     const link = document.createElement('a');
     link.href = window.URL.createObjectURL(zipBlob);
     link.download = 'bobiac_data.zip';
+    link.style.display = 'none';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    window.URL.revokeObjectURL(link.href);
+}
+
+// Function to download all PDF files
+async function downloadPdfs() {
+    // Load JSZip library
+    let JSZip;
+    if (window.JSZip) {
+        JSZip = window.JSZip;
+    } else {
+        const module = await import('https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js');
+        JSZip = module.default || module.JSZip || window.JSZip;
+    }
+    
+    const zip = new JSZip();
+    const pdfFolder = zip.folder("bobiac_pdfs");
+    
+    // Function to recursively scan a directory for PDFs
+    async function scanDirectory(path, targetFolder) {
+        try {
+            const response = await fetch(path);
+            const html = await response.text();
+            
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+            const links = doc.querySelectorAll('a');
+            
+            for (const link of links) {
+                const href = link.getAttribute('href');
+                if (!href || href === '../' || href === './') {
+                  continue;
+                }
+                
+                const fullPath = path + href;
+                
+                if (href.endsWith('/')) {
+                    // It's a directory, scan recursively
+                    const subFolderName = href.replace('/', '');
+                    const subFolder = targetFolder.folder(subFolderName);
+                    await scanDirectory(fullPath, subFolder);
+                } else if (href.endsWith('.pdf')) {
+                    // It's a PDF file, add it to the zip
+                    try {
+                        const fileResponse = await fetch(fullPath);
+                        const fileBlob = await fileResponse.blob();
+                        targetFolder.file(href, fileBlob);
+                    } catch (error) {
+                        console.error(`Failed to fetch ${href}:`, error);
+                    }
+                }
+            }
+        } catch (error) {
+            console.error(`Failed to scan directory ${path}:`, error);
+        }
+    }
+    
+    // Start scanning from the pdfs directory
+    await scanDirectory('../pdfs/', pdfFolder);
+    
+    // Check if any files were added
+    const hasFiles = Object.keys(pdfFolder.files).length > 0;
+    if (!hasFiles) {
+        alert('No PDF files found in the pdfs directory.');
+        return;
+    }
+    
+    // Generate and download the combined zip
+    const zipBlob = await zip.generateAsync({type: "blob"});
+    const link = document.createElement('a');
+    link.href = window.URL.createObjectURL(zipBlob);
+    link.download = 'bobiac_pdfs.zip';
     link.style.display = 'none';
     document.body.appendChild(link);
     link.click();

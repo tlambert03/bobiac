@@ -1,4 +1,4 @@
-# <i class="fa-solid fa-folder"></i> Course Data
+# <i class="fa-solid fa-folder"></i> Course Data & PDFs
 
 <strong> 05 - <i class="fa-solid fa-disease"></i> Semantic & Instance Segmentation</strong>
 
@@ -20,5 +20,12 @@
     <a
         class="custom-button custom-download-button" href="javascript:void(0)" onclick="downloadScript()">
         <i class="fas fa-download"></i> Download All Course Data
+    </a>
+</div>
+
+<div class="custom-button-row" style="text-align: center; margin: 20px 0;">
+    <a
+        class="custom-button custom-download-button" href="javascript:void(0)" onclick="downloadPdfs()">
+        <i class="fas fa-download"></i> Download All Course Slides as PDFs
     </a>
 </div>
