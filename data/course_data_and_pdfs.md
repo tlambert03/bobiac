@@ -1,5 +1,7 @@
 # <i class="fa-solid fa-folder"></i> Course Data & PDFs
 
+## Course Data
+
 <strong> 05 - <i class="fa-solid fa-disease"></i> Semantic & Instance Segmentation</strong>
 
 - Classic Segmentation:
@@ -14,7 +16,7 @@
 
 - Pixel Intensity Based: <a href="../_static/data/08_pixel_intensity_based_coloc.zip" download> <i class="fas fa-download"></i> Mander's & Pearson's Colocalization Dataset</a>
 
----
+## Download All Course Data & Slides
 
 <div class="custom-button-row" style="text-align: center; margin: 20px 0;">
     <a
