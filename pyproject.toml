@@ -41,6 +41,7 @@ dependencies = [
     "bioio_tifffile",
     "bioio-nd2", 
     "rich",
+    "shapely",
 ]
 
 [tool.hatch.build.targets.wheel]
