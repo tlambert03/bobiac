@@ -116,6 +116,12 @@ target-version = ["py39"]
 "thr" = "thr"
 "-ome-" = "-ome-"
 ".ome" = ".ome"
+ome = "ome" 
+"bioio-ome-tiff" = "bioio-ome-tiff"
+"bioio-ome-tiled-tiff" = "bioio-ome-tiled-tiff" 
+"bioio-ome-zarr" = "bioio-ome-zarr" 
+".ome.tiff" = ".ome.tiff" 
+".tiles.ome.tif" = ".tiles.ome.tif" 
 
 [tool.typos.files]
 # You can also exclude specific files or patterns if needed
