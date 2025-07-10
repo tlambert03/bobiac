@@ -15,7 +15,7 @@ EXCLUDE_FROM_STYLING = [
     "reproducibility_and_image_ethics.html",
     "python_for_digital_images.html",
     "segmentation_intro.html",
-    "machine_learning_with_ilastik.html",
+    "intro_to_ilastik.html",
 ]
 
 

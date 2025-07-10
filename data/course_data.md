@@ -13,3 +13,12 @@
 <strong> 08 - <i class="fa-solid fa-disease"></i> Colocalization</strong>
 
 - Pixel Intensity Based: <a href="../_static/data/08_pixel_intensity_based_coloc.zip" download> <i class="fas fa-download"></i> Mander's & Pearson's Colocalization Dataset</a>
+
+---
+
+<div class="custom-button-row" style="text-align: center; margin: 20px 0;">
+    <a
+        class="custom-button custom-download-button" href="javascript:void(0)" onclick="downloadScript()">
+        <i class="fas fa-download"></i> Download All Course Data
+    </a>
+</div>
