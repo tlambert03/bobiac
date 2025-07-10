@@ -38,6 +38,7 @@ dependencies = [
     "tqdm",
     "pandas",
     "bioio",
+    "bioio_tifffile",
     "rich",
 ]
 
