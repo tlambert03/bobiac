@@ -1,4 +1,4 @@
-# <i class="fa-solid fa-folder"></i> Course Data & PDFs
+# <i class="fa-solid fa-folder"></i> Course Materials Downloads
 
 ## Course Data
 
@@ -16,18 +16,32 @@
 
 - Pixel Intensity Based: <a href="../_static/data/08_pixel_intensity_based_coloc.zip" download> <i class="fas fa-download"></i> Mander's & Pearson's Colocalization Dataset</a>
 
-## Download All Course Data & Slides
-
-<div class="custom-button-row" style="text-align: center; margin: 20px 0;">
-    <a
-        class="custom-button custom-download-button" href="javascript:void(0)" onclick="downloadScript()">
-        <i class="fas fa-download"></i> Download All Course Data
-    </a>
-</div>
+## Download All Course Materials
 
 <div class="custom-button-row" style="text-align: center; margin: 20px 0;">
     <a
         class="custom-button custom-download-button" href="javascript:void(0)" onclick="downloadPdfs()">
         <i class="fas fa-download"></i> Download All Course Slides as PDFs
+    </a>
+</div>
+
+<div class="custom-button-row" style="text-align: center; margin: 20px 0;">
+    <a
+        class="custom-button custom-download-button" href="javascript:void(0)" onclick="downloadNotebooks()">
+        <i class="fas fa-download"></i> Download All Course Jupyter Notebooks (Student Version)
+    </a>
+</div>
+
+<div class="custom-button-row" style="text-align: center; margin: 20px 0;">
+    <a
+        class="custom-button custom-download-button" href="javascript:void(0)" onclick="downloadNotebooksTeacher()">
+        <i class="fas fa-download"></i> Download All Course Jupyter Notebooks (Teacher Version)
+    </a>
+</div>
+
+<div class="custom-button-row" style="text-align: center; margin: 20px 0;">
+    <a
+        class="custom-button custom-download-button" href="javascript:void(0)" onclick="downloadScript()">
+        <i class="fas fa-download"></i> Download All Course Data
     </a>
 </div>
