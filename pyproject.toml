@@ -39,6 +39,7 @@ dependencies = [
     "pandas",
     "bioio",
     "bioio_tifffile",
+    "bioio-nd2", 
     "rich",
 ]
 
@@ -113,6 +114,8 @@ target-version = ["py39"]
 "nd" = "nd"
 "ba" = "ba"
 "thr" = "thr"
+"-ome-" = "-ome-"
+".ome" = ".ome"
 
 [tool.typos.files]
 # You can also exclude specific files or patterns if needed
