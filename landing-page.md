@@ -23,7 +23,7 @@ All the Notebooks are designed to be used with [uv](https://docs.astral.sh/uv/ge
 
 ### Course Datasets
 
-The datasets used in this book are available to download from the [Course Data](./data/course_data.md) section of this book.
+The datasets used in this book are available to download from the [Course Data](./data/course_data_and_pdfs.md) section of this book.
 
 ### Table of Contents
 
