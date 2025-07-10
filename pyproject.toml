@@ -123,6 +123,8 @@ ome = "ome"
 "bioio-ome-zarr" = "bioio-ome-zarr" 
 ".ome.tiff" = ".ome.tiff" 
 ".tiles.ome.tif" = ".tiles.ome.tif" 
+"np.arange" = "np.arange"
+arange = "arrange"
 
 [tool.typos.files]
 # You can also exclude specific files or patterns if needed
