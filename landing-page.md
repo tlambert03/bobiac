@@ -9,7 +9,7 @@
 
 ## Welcome to the BoBiAC Book
 
-...
+Welcome to the BoBiAC Book — your resource for the [Boston BioImage Analysis Course](https://bobiac.org), a course designed to introduce **image analysis with python** to a **beginner** audience. This book is designed to provide a guide through the course content, including lecture slides, Jupyter notebooks, and datasets.
 
 ### Lecture Slides
 
