@@ -59,11 +59,10 @@ parts:
   chapters:
   - file: student_group_work/student_group_work.md
 
-
 # COURSE DATA
-- caption: Data
+- caption: Data & PDFs
   chapters:
-  - file: data/course_data.md
+  - file: data/course_data_and_pdfs.md
 
 
 # LINKS/EXTRA
