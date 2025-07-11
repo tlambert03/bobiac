@@ -1,4 +1,4 @@
-# <i class="fa-solid fa-folder"></i> Course Materials Downloads
+# <i class="fa-solid fa-folder"></i> Downloads
 
 ## Course Data
 
