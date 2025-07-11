@@ -60,9 +60,9 @@ parts:
   - file: student_group_work/student_group_work.md
 
 # COURSE DATA
-- caption: Data & PDFs
+- caption: Course Materials Downloads
   chapters:
-  - file: data/course_data_and_pdfs.md
+  - file: data/course_downloads.md
 
 
 # LINKS/EXTRA
