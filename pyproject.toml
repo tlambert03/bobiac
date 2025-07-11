@@ -37,6 +37,11 @@ dependencies = [
     "pre-commit",
     "tqdm",
     "pandas",
+    "bioio",
+    "bioio_tifffile",
+    "bioio-nd2", 
+    "rich",
+    "shapely",
 ]
 
 [tool.hatch.build.targets.wheel]
@@ -110,6 +115,16 @@ target-version = ["py39"]
 "nd" = "nd"
 "ba" = "ba"
 "thr" = "thr"
+"-ome-" = "-ome-"
+".ome" = ".ome"
+ome = "ome" 
+"bioio-ome-tiff" = "bioio-ome-tiff"
+"bioio-ome-tiled-tiff" = "bioio-ome-tiled-tiff" 
+"bioio-ome-zarr" = "bioio-ome-zarr" 
+".ome.tiff" = ".ome.tiff" 
+".tiles.ome.tif" = ".tiles.ome.tif" 
+"np.arange" = "np.arange"
+arange = "arange"
 
 [tool.typos.files]
 # You can also exclude specific files or patterns if needed
