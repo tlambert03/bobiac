@@ -2,6 +2,9 @@
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
+[tool.hatch.metadata]
+allow-direct-references = true
+
 [project]
 name = "bobiac"
 version = "1.0.0"
@@ -37,7 +40,9 @@ dependencies = [
     "pre-commit",
     "tqdm",
     "pandas",
+    "coloc_tools @ git+https://github.com/fdrgsp/coloc_tools.git",
 ]
+
 
 [tool.hatch.build.targets.wheel]
 # This is a Jupyter Book project - we only want to install dependencies
