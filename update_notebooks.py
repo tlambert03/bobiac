@@ -28,7 +28,9 @@ map_03_python_basics_book_to_notebook = {
 }
 
 
-def update_notebooks(input_path: str | Path, output_path: str | Path) -> None:
+def update_notebooks(
+    input_path: str | Path, output_path: str | Path, teacher: bool
+) -> None:
     nb = nbformat.read(input_path, as_version=4)
     cleaned_cells = []
 
@@ -40,9 +42,7 @@ def update_notebooks(input_path: str | Path, output_path: str | Path) -> None:
             lines = cell.source.splitlines()
             cell.source = lines[0] if lines else ""
 
-        # clear the cell input if it has the 'teacher' tag (it is an exercise)
-        if "teacher" in tags:
-            # remove the tag
+        if not teacher and "teacher" in tags:
             tags.remove("teacher")
             # clear the cell content
             cell.source = ""
@@ -119,4 +119,5 @@ def update_notebooks(input_path: str | Path, output_path: str | Path) -> None:
 if __name__ == "__main__":
     src = Path(sys.argv[1])
     dest = Path(sys.argv[2])
-    update_notebooks(src, dest)
+    teacher_mode = sys.argv[3].lower() == "true"
+    update_notebooks(src, dest, teacher_mode)

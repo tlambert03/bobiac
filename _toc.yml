@@ -18,7 +18,7 @@ parts:
 
   - file: content/04_digital_images_intro/digital_images_intro.md
     sections:
-      - file: content/04_digital_images_intro/python_for_digital_images.md
+      - file: content/04_digital_images_intro/python_for_bioimage_analysis
 
   - file: content/05_segmentation/segmentation_intro.md
     sections:
@@ -49,6 +49,7 @@ parts:
     sections:
       - file: content/08_colocalization/pixel_intensity_based_colocalization_pearsons
       - file: content/08_colocalization/pixel_intensity_based_colocalization_manders
+      - file: content/08_colocalization/object_based_colocalization
 
   - file: content/09_reproducibility_and_image_ethics/reproducibility_and_image_ethics.md
 
@@ -59,9 +60,9 @@ parts:
   - file: student_group_work/student_group_work.md
 
 # COURSE DATA
-- caption: Data & PDFs
+- caption: Course Materials Downloads
   chapters:
-  - file: data/course_data_and_pdfs.md
+  - file: data/course_downloads.md
 
 
 # LINKS/EXTRA

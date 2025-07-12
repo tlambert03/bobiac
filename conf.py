@@ -23,7 +23,6 @@ html_css_files = ["styles/custom.css"]
 html_js_files = ["scripts/custom.js"]
 
 html_static_path = ["_static"]
-html_js_files = ["scripts/custom.js"]
 
 html_theme = "sphinx_book_theme"
 

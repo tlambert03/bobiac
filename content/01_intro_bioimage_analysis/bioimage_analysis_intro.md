@@ -7,7 +7,7 @@
 ## Slides
 
 <a
-    class="custom-button custom-download-button" href="../../pdfs/03_python_basics/templates.pdf" download> <i class="fas fa-download"></i> Download this Slides
+    class="custom-button custom-download-button" href="../../pdfs/01_intro_bioimage_analysis/templates.pdf" download> <i class="fas fa-download"></i> Download this Slides
 </a>
 
 <div align="center">
