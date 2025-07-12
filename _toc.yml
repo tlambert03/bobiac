@@ -24,9 +24,7 @@ parts:
     sections:
       - file: content/05_segmentation/classic/classic.md
         sections:
-          - file: content/05_segmentation/classic/filters.md
-          - file: content/05_segmentation/classic/thresholding.md
-          - file: content/05_segmentation/classic/labeling.md
+          - file: content/05_segmentation/classic/classic_segmentation.ipynb
       - file: content/05_segmentation/machine_learning/machine_learning.md
         sections:
           - file: content/05_segmentation/machine_learning/intro_to_ilastik.md
