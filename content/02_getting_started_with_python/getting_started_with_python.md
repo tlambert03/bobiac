@@ -132,7 +132,7 @@ It is built on the following concepts:
 2. As we saw [above](#uv-run-with-additional-dependencies): `uv` can read
    dependencies specified inside of a script.
 3. `juv` just brings along the necessary Jupyter notebook dependencies and
-   grabs the dependencies from the top of your notebook.
+   parses the dependencies from the top of your notebook for `uv`.
 
 | <span style="display: inline-block; width:310px;">Command</span>  | Description |
 | -------- | ----------- |
