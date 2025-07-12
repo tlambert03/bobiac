@@ -23,6 +23,10 @@ and `.` to refer to the current directory.
 
 ## `uv` cheat sheet
 
+[`uv`]((https://docs.astral.sh/uv/)) is a fast, one-stop-shop for managing
+Python versions, virtual environments, and packages.  It is an _excellent_ tool
+to learn if you want to get started quickly with Python.
+
 Here are some common `uv` commands that will help you get started using Python
 with `uv`.  We will use them throughout this book.
 
