@@ -34,25 +34,37 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Function to download all course data files
 async function downloadScript() {
-    // Fetch the directory listing from _static/data
-    const response = await fetch('../_static/data/');
-    const html = await response.text();
-    
-    // Parse HTML to find all .zip files
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(html, 'text/html');
-    const links = doc.querySelectorAll('a[href$=".zip"]');
-    
-    // Extract zip filenames
-    const zipFiles = Array.from(links).map(link => {
-        const href = link.getAttribute('href');
-        return href.split('/').pop(); // Get just the filename
-    }).filter(filename => filename.endsWith('.zip'));
-    
+    // Hardcoded list of raw GitHub URLs for each zip file
+    const zipFiles = [
+        '04_python_for_bioimage_analysis.zip',
+        '05_segmentation_cellpose.zip',
+        '05_segmentation_cellpose_training.zip',
+        '05_segmentation_ilastik.zip',
+        '07_measurement_and_quantification.zip',
+        '08_object_based_colocalization.zip',
+        '08_pixel_intensity_based_coloc.zip'
+    ];
+    // Change these to your repo info
+    const githubRawBase = 'https://raw.githubusercontent.com/fdrgsp/bobiac/main/_static/data/';
     if (zipFiles.length === 0) {
-        alert('No zip files found in the data directory.');
+        alert('No zip files found in the GitHub data folder.');
         return;
     }
+    // Show loading indicator
+    const indicator = document.createElement('div');
+    indicator.id = 'download-indicator';
+    indicator.style.position = 'fixed';
+    indicator.style.top = '0';
+    indicator.style.left = '0';
+    indicator.style.width = '100vw';
+    indicator.style.height = '100vh';
+    indicator.style.background = 'rgba(0,0,0,0.4)';
+    indicator.style.display = 'flex';
+    indicator.style.alignItems = 'center';
+    indicator.style.justifyContent = 'center';
+    indicator.style.zIndex = '9999';
+    indicator.innerHTML = '<div style="background: #fff; padding: 30px 40px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); font-size: 1.2em; text-align: center;">Downloading course data...<br><span id="download-progress"></span></div>';
+    document.body.appendChild(indicator);
     
     // Load JSZip library
     let JSZip;
@@ -62,22 +74,24 @@ async function downloadScript() {
         const module = await import('https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js');
         JSZip = module.default || module.JSZip || window.JSZip;
     }
-    
     const zip = new JSZip();
     const dataFolder = zip.folder("bobiac_data");
-    
-    // Fetch and add each file to the zip
-    for (const filename of zipFiles) {
+    // Fetch and add each file to the zip from GitHub raw URLs
+    for (let i = 0; i < zipFiles.length; i++) {
+        const filename = zipFiles[i];
         try {
-            const fileResponse = await fetch(`../_static/data/${filename}`);
+            const fileResponse = await fetch(githubRawBase + filename);
+            if (!fileResponse.ok) throw new Error(`HTTP ${fileResponse.status}`);
             const fileBlob = await fileResponse.blob();
             dataFolder.file(filename, fileBlob);
+            // Update progress
+            document.getElementById('download-progress').textContent = `(${i+1}/${zipFiles.length})`;
         } catch (error) {
-            console.error(`Failed to fetch ${filename}:`, error);
+            console.error(`Failed to fetch ${filename} from GitHub:`, error);
         }
     }
-    
     // Generate and download the combined zip
+    document.getElementById('download-progress').textContent = 'Zipping files...';
     const zipBlob = await zip.generateAsync({type: "blob"});
     const link = document.createElement('a');
     link.href = window.URL.createObjectURL(zipBlob);
@@ -87,6 +101,8 @@ async function downloadScript() {
     link.click();
     document.body.removeChild(link);
     window.URL.revokeObjectURL(link.href);
+    // Remove indicator
+    document.body.removeChild(indicator);
 }
 
 // Function to download all PDF files
