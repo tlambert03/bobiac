@@ -42,6 +42,6 @@
 <div class="custom-button-row" style="text-align: center; margin: 20px 0;">
     <a
         class="custom-button custom-download-button" href="javascript:void(0)" onclick="downloadScript()">
-        <i class="fas fa-download"></i> Download All Course Data
-    </a> (No DAPI dataset, download it above)
+        <i class="fas fa-download"></i> Download All Course Data (No DAPI dataset, download it above)
+    </a>
 </div>
