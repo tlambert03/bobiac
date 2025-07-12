@@ -28,7 +28,7 @@ When you open **Ilastik**, you will see the [Startup Screen](https://www.ilastik
 
 ### 2. Load the Image Data
 
-Next, you will need to [load the image data](https://www.ilastik.org/documentation/basics/dataselection) you want to use to train the classifier. Select the ***Raw Data*** tab and either *Drag and drop* your image files into the ***Add New...*** field of the data table or click on it to select your images. To create a robust classifier, you should load multiple images from the dataset. For this exercise, you can load 3 random images from the <a href="../../../_static/data/05_segmentation_ilastik.zip" download> <i class="fas fa-download"></i> pixel classification dataset</a>.
+Next, you will need to [load the image data](https://www.ilastik.org/documentation/basics/dataselection) you want to use to train the classifier. Select the ***Raw Data*** tab and either *Drag and drop* your image files into the ***Add New...*** field of the data table, or click on it to select your images. To create a robust classifier, you should load multiple images from the dataset. For this exercise, you can load 3 random images from the <a href="../../../_static/data/05_segmentation_ilastik.zip" download> <i class="fas fa-download"></i> pixel classification dataset</a>.
 
 <div align="center"> <img src="../../../_static/images/ilastik/1b.png" alt="Ilastik" width="800"> </div>
 
@@ -50,7 +50,7 @@ For pixel classification, **Ilastik** provides a list of features types, divided
 
 <br>
 
-For each of the feature you can also choose the ***scale***. The scales correspond to the *sigma of the Gaussian* which is used to smooth the image before application of the filter. Filters with larger sigmas can thus pull in information from larger neighborhoods, but average out the fine details.
+You can also choose the ***scale*** for each of these features. The scales correspond to the *sigma of the Gaussian* which is used to smooth the image before application of the filter. Filters with larger sigmas can thus pull in information from larger neighborhoods, but average out the fine details.
 
 <div align="center"> <img src="../../../_static/images/ilastik/2b.png" alt="Ilastik" width="730"> </div>
 
@@ -66,7 +66,7 @@ After clicking on ***Ok***, you can **visualize the effect of the selected featu
 
 ### 4. Train the Classifier
 
-The next step is to [train the classifier](https://www.ilastik.org/documentation/pixelclassification/pixelclassification#training-the-classifier) based on the features you selected. This is an interactive process where you will need to **label a few pixels** in the image to provide the classifier with examples of the different classes.
+The next step is to [train the classifier](https://www.ilastik.org/documentation/pixelclassification/pixelclassification#training-the-classifier) based on the features you selected. This is an interactive process where you will need to **label a few pixels** in the image with annotations to provide the classifier with examples of the different classes.
 
 In the ***Training*** step (on the left side of the GUI) you can **add**, **remove** or **edit** the classes (labels) that you want to use for the classification. For this exercise, we will use two classes: ***nuclei*** and ***background***. To rename the default classes, *Label 1* and *Label 2*, double-click on each class and type the new name (You can also change the class color by double-clicking on the color box next to the class name).
 
@@ -114,7 +114,7 @@ Either way, the first step is to select what you want to export by choosing an o
 
 <div align="center"> <img src="../../../_static/images/ilastik/5a.png" alt="Ilastik" width="800"> </div>
 
-The second step is to select how we want to export the results. By clicking on the ***Choose Export Image Settings...*** button, a new window will open where you can select different options including the export format and the output folder where to save the result. Select "tif" as format and leave as default the output file path since it automatically is set to save the results in the same folder as the input images with the suffix appropriately changing depending on the option you select in the ***Source*** drop-down menu (e.g. *_Simple Segmentation*). Leave the other options untouched since we do not need to change them for this exercise.
+The second step is to select how we want to export the results. By clicking on the ***Choose Export Image Settings...*** button, a new window will open where you can select different options, including the export format and the output folder to save the result. Select "tif" as format and leave as default the output file path since it automatically is set to save the results in the same folder as the input images with the suffix appropriately changing depending on the option you select in the ***Source*** drop-down menu (e.g. *_Simple Segmentation*). Leave the other options untouched since we do not need to change them for this exercise.
 
 <div align="center"> <img src="../../../_static/images/ilastik/5b.png" alt="Ilastik" width="800"> </div>
 
@@ -133,5 +133,4 @@ Depending on the option you select in the previous ***Prediction Export***, the 
 
 ### 7. What's Next?
 
-From this **Ilastik** pipeline we managed to extract the **semantic segmentation** of the nuclei in all the images. In the next sections of the course, we will first use the **semantic segmentation** and [convert it into **instance segmentation**](./from_ilastik_masks_to_labels.ipynb) (as in the [classic segmentastion methods](../classic/classic.md) section). And then we will use these labelled images to classify the nuclei into different classes based on their cell cycle stage using the **Ilastik** [**Object Classification** workflow](../../06_object_classification/object_classification_with_ilastik.md).
-***TODO: UPDATE LINK TO CLASSIC SEGMENTATION METHODS SECTION and OBJECT CLASSIFICATION SECTION ONCE THEY ARE READY***
+From this **Ilastik** pipeline we managed to extract the **semantic segmentation** of the nuclei in all the images. In the next section of this lesson, we will use the **semantic segmentation** and [convert it into **instance segmentation**](./from_ilastik_masks_to_labels.ipynb) (as in the [classic segmentation methods](../classic/classic.md) section. Then, we will classify nuclei in these labeled images into different cell cycle stage classes using the **Ilastik** [**Object Classification** workflow](../../06_object_classification/object_classification_with_ilastik.md).
