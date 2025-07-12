@@ -2,11 +2,11 @@
 
 ## Course Data
 
-<strong> 05 - <i class="fa-solid fa-disease"></i> Semantic & Instance Segmentation</strong>
+<strong> 05 - <i class="fa-solid fa-disease"></i> Image Segmentation</strong>
 
-- Classic Segmentation:
-- Machine Learning: Ilastik <a href="../_static/data/05_segmentation_ilastik.zip" download> <i class="fas fa-download"></i>Pixel Classification Dataset </a> (from Ilastik Example Data Mitocheck 2D+t)
-- Deep Learning: Cellpose
+- Classical Methods: <a href="https://drive.google.com/uc?export=download&id=1Svlnr2R5CYf5NvRzx3FxghrrxdfnPdiY"> <i class="fas fa-download"></i> DAPI dataset</a>
+- Machine Learning Methods: Ilastik <a href="../_static/data/05_segmentation_ilastik.zip" download> <i class="fas fa-download"></i>Pixel Classification Dataset </a> (from Ilastik Example Data Mitocheck 2D+t)
+- Deep Learning Methods: Cellpose
 
 <strong> 07 - <i class="fa-solid fa-disease"></i> Measurement & Quantification</strong>
 
@@ -43,5 +43,5 @@
     <a
         class="custom-button custom-download-button" href="javascript:void(0)" onclick="downloadScript()">
         <i class="fas fa-download"></i> Download All Course Data
-    </a>
+    </a> (No DAPI dataset, download it above)
 </div>
