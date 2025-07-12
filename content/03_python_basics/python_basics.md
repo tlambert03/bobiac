@@ -18,9 +18,9 @@ By the end of this lesson, you should be well-versed to start typing basic code 
 ## Python Cheat Sheet
 
 <a
-    class="custom-button custom-download-button" href="../../pdfs/03_python_basics/python_cheat_sheet.pdf" download> <i class="fas fa-download"></i> Download a Python Cheat Sheet for quick reference of concepts covered in this lesson.
+    class="custom-button custom-download-button" href="../../03_python_basics/python_cheat_sheet.pdf" download> <i class="fas fa-download"></i> Download a Python Cheat Sheet for quick reference of concepts covered in this lesson.
 </a>
 
 <div align="center">
-  <iframe class="custom-pdf-frame" src="../../pdfs/03_python_basics/python_cheat_sheet.pdf"> </iframe>
+  <iframe class="custom-pdf-frame" src="../../03_python_basics/python_cheat_sheet.pdf"> </iframe>
 </div>
