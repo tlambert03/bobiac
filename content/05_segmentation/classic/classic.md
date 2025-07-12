@@ -26,10 +26,4 @@ In **Act 2**, we will finish the lesson with the following section:
 
 1. Processing Many Images
 
-## Dataset
-
-<a href="https://drive.google.com/uc?export=download&id=1Svlnr2R5CYf5NvRzx3FxghrrxdfnPdiY">
-  <i class="fas fa-download"></i> DAPI dataset
-</a> containing images of DAPI-stained nuclei.
-
 Let's get ready to code!
