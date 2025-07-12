@@ -12,7 +12,7 @@ The software is well-documented, with comprehensive resources available [here](h
 
 ## Download and Install Ilastik
 
-**Ilastik** as available as an application with a **graphical user interface (GUI)**. The latest version can be downloaded [here](https://www.ilastik.org/download). Select the appropriate version depending on the operating system (e.g. Windows, macOS). The installation process is straightforward and typically involves running an installer or dragging the application to the Applications folder (on macOS).
+**Ilastik** is available as an application with a **graphical user interface (GUI)**. The latest version can be downloaded [here](https://www.ilastik.org/download). Select the appropriate version depending on your operating system (e.g. Windows, macOS). The installation process is straightforward and typically involves running an installer or dragging the application to the Applications folder (on macOS).
 
 ## What's Next?
 

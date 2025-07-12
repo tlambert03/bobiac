@@ -39,7 +39,7 @@ After installing `uv` you can run the following commands in your terminal to ope
 uvx juv run path/to/your/notebook.ipynb
 ```
 
-If you did install `juv`, you can simply run:
+If you already ran `uv tool install juv`, you can simply run:
 
 ```bash
 juv run path/to/your/notebook.ipynb
