@@ -1,7 +1,9 @@
 # 03 - <i class="fab fa-python"></i> Python Basics
 
 ## Lesson Overview
-This beginner-friendly lesson will cover the fundamentals of coding in Python. The following topics are broken down into chapters with examples and exercises: 
+
+This beginner-friendly lesson will cover the fundamentals of coding in Python. The following topics are broken down into chapters with examples and exercises:
+
 * Commenting & Printing
 * Data Types
 * Variables
