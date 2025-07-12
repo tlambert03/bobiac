@@ -40,7 +40,7 @@ Spatial features capture the location and relationship between structures. They 
 - **Convex Hull**: The smallest convex polygon that encloses the object
 
 <div class="alert alert-info">
-    <strong>NOTE:</strong> Ensure intensity normalization (e.g., background subtraction, illumination correction) before feature extraction, especially when comparing across fields of view or slides.
+    <strong>NOTE:</strong> Ensure intensity normalization (e.g., background correction, illumination correction) before feature extraction, especially when comparing across fields of view or slides.
 </div>
 
 ## Limitations of Optical Microscopy on Feature Extraction
