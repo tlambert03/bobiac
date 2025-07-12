@@ -16,6 +16,13 @@ Linux, and the Windows PowerShell terminal (but not the windows `cmd` Prompt).
 | **`pwd`** | Print the current working directory. |
 | **`mkdir [DIR]`** | Create a new directory named `[DIR]`. |
 
+Reminder:  
+
+- To open the terminal on macOS, you can use the `Command + Space` shortcut to
+open Spotlight, then type "Terminal" and hit `Enter`.
+- On Windows, you can use the `Windows + R` shortcut to open the Run dialog,
+then type "powershell" and hit `Enter`.
+
 ```{tip}
 When using relative paths, you can use `..` to refer to the parent directory,
 and `.` to refer to the current directory.
