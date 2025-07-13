@@ -19,7 +19,7 @@ All `Lecture Slides` within the book are available for download as PDFs.
 <br>
 You can download the complete slide decks from the [Course Materials Downloads](data/course_downloads.md) section of this book.
 <br>
-Additionally, each individual page that contains lecture slides has a `Download this Slides` button at the top for convenient access to slides for that specific topic.
+Additionally, each individual page that contains lecture slides has a `Download the Slides` button at the top for convenient access to slides for that specific topic.
 
 ### Jupyter Notebooks
 
