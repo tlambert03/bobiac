@@ -1,13 +1,47 @@
 # 02 - <i class="fab fa-python"></i> Getting Started with Python and `uv`
 
+## Lesson Overview
+
+The goal of this section is to gain a basic understanding of:
+
+1. What Python is.
+2. How to install it (we will use `uv`) and where it "lives" on your computer.
+3. How to run Python code.
+4. What packages are and how to install them.
+5. What virtual environments are, why they are useful, and how to create them.
+
+We will focus on using [`uv`](#uv-cheat-sheet) to manage Python versions,
+create virtual environments, and install packages.
+
+## Slides
+
+<a
+    class="custom-button custom-download-button" href="../../pdfs/02_getting_started_with_python/getting_started_python_uv.pdf" download> <i class="fas fa-download"></i> Download the Slides
+</a>
+
+<div align="center">
+  <iframe class="custom-pdf-frame" src="../../pdfs/02_getting_started_with_python/getting_started_python_uv.pdf"> </iframe>
+</div>
+
+## Notes
+
 Here is a summary of some of the most useful commands and concepts that we cover
 in the lecture for this section.
 
-## Terminal commands
+### Terminal commands
 
 Here are some basic terminal commands that will help you use the
 command line effectively.  These commands work for macOS,
 Linux, and the Windows PowerShell terminal (but not the windows `cmd` Prompt).
+
+```{tip}
+Reminder, To open the terminal:
+
+- On macOS, you can use the `Command + Space` shortcut to
+open Spotlight, then type "Terminal" and hit `Enter`.
+- On Windows, you can use the `Windows + R` shortcut to open the Run dialog,
+then type "powershell" and hit `Enter`.
+```
 
 | <span style="display: inline-block; width:100px;">Command</span>  | Description |
 | -------- | ----------- |
@@ -16,19 +50,12 @@ Linux, and the Windows PowerShell terminal (but not the windows `cmd` Prompt).
 | **`pwd`** | Print the current working directory. |
 | **`mkdir [DIR]`** | Create a new directory named `[DIR]`. |
 
-Reminder:  
-
-- To open the terminal on macOS, you can use the `Command + Space` shortcut to
-open Spotlight, then type "Terminal" and hit `Enter`.
-- On Windows, you can use the `Windows + R` shortcut to open the Run dialog,
-then type "powershell" and hit `Enter`.
-
 ```{tip}
 When using relative paths, you can use `..` to refer to the parent directory,
 and `.` to refer to the current directory.
 ```
 
-## `uv` cheat sheet
+### `uv` cheat sheet
 
 [`uv`]((https://docs.astral.sh/uv/)) is a fast, one-stop-shop for managing
 Python versions, virtual environments, and packages.  It is an _excellent_ tool
@@ -59,7 +86,7 @@ see references to commands like `uv init`, `uv sync`, `uv add`, or `uv remove`,
 these are only relevant in the context of using `uv` for project management.
 ```
 
-## `uv` ↔️ `conda` translation table
+### `uv` ↔️ `conda` translation table
 
 ```{tip}
 If you are already familiar with `conda`, here is a quick translation table to
@@ -74,7 +101,7 @@ help you understand how `uv` commands map to `conda` commands:
 | **`uv pip list`** | **`conda list`** | List all packages in the env |
 ```
 
-## `uv run`
+### `uv run`
 
 `uv run` is a command that allows you to run a command or script in an on-demand
 virtual environment.
@@ -96,7 +123,7 @@ uv run hello.py
 <small>_... For complete docs, see
 [Running scripts](https://docs.astral.sh/uv/guides/scripts/)._</small>
 
-## `uv run` with additional dependencies
+### `uv run` with additional dependencies
 
 A particulary useful feature of `uv run` is that you can specify dependencies
 _in your script_ using a special syntax in a comment at the top of the file.
@@ -128,7 +155,7 @@ uv run example_script.py
 <small>_... For complete docs, see [Declaring script
 dependencies](https://docs.astral.sh/uv/guides/scripts/#declaring-script-dependencies)._</small>
 
-## Running Jupyter notebooks with `juv`
+### Running Jupyter notebooks with `juv`
 
 💡 _Think of `juv` as `uv run` for Jupyter notebooks._
 
